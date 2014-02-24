@@ -1,0 +1,94 @@
+	<load file="__PUBLIC__/header.html"/>
+
+		<!-- 內頁導航圖區 S -->
+		<div class="innerImg">
+			<if value="L('_LANG_') eq 'en'">
+				
+					<img src="__PUBLIC__/images/jtgl-e.jpg" width="1000" height="135" alt="">
+				<else/>
+				
+					<img src="__PUBLIC__/images/jtgl.jpg" width="1000" height="135" alt="">
+			</if>
+
+			<ul class="secNav">
+					<li class="secOn"><a  href='__APP__/GrouProfile' >{$hd.language._COMPANY_PROFILE_}</a>
+					
+					</li>
+					<li ><a href='__APP__/GrouProfile/statement'>{$hd.language._CHAIRMAN_STATEMENT_}</a></li>
+					<li ><a href='__APP__/GrouProfile/roadmap'>{$hd.language._ROAD_MAP_}</a></li>
+			</ul>
+			
+			
+		</div>
+		<!-- 內頁導航圖區 E -->
+		<!-- 三級菜單 S -->
+		<!-- <div class="thirNav">
+			<p><a href="">aaa</a>&nbsp;&nbsp;<a href="">bbb</a></p>
+		</div> -->
+		<!-- 三級菜單 E -->
+		<div class="blank12"></div>
+		<!-- 内页content S -->
+		<div class="innerContent">
+			<!-- left S -->
+			<div class="innerLeft">
+				<div class="contents">
+
+				<if value="L('_LANG_') eq 'en'">
+				
+					<!-- 公司简介英文S -->
+						<p>Anxin-China Holdings Limited (Anxin-China), with market value over 5 billion HKD as of 31 December 2012, is a public company listed in the Hong Kong Stock Exchange (HKEX) with stock code 01149. HK. With headquarter in HK, Anxin-China sets its operational center in Shenzhen, a R&D center in Huai’an, Jiangsu, as well as a production & marketing center in Longhua, Shenzhen. Moreover, Anxin-China’s subsidiaries are distributed in Jilin, Jiangsu, Chongqing and et al. As a leading industrial and public safety integrated solution provider & operator in China, Anxin-China always devotes itself to providing intelligent security systems for both public security and industrial safety production areas.</p>
+						<p>Anxin-China focuses on the establishment of smart industrial safety (ISD system) and public security (ISS system). Anxin-China ISD system (Intelligent Surveillance, Disaster alert and rescue coordination) has been successfully applied in a numerous industries, including coal mining, non-coal mining, dangerous chemicals, inflammables and et al. Anxin-China is currently the largest ISD system provider in China.</p>
+						<p>In the public security field, Anxin-China inputs lots of resources into the development of ISS (Intelligent Safety System). iVAS as the core technology of ISS is developed on the basis of the technology acquired from the renowned Israeli-based Mate Intelligent in 2012, which owns several American patents (American Patent Numbers: 6937766 and 7184100). Anxin-China enhances the technology for Chinese market further, which makes iVAS suitable for national defense, police office, traffic, fire protection, industrial park, city construction, business and et al. Anxin-China skillfully implements perfect business models and deploys impeccable front-end equipment & back-end management system, to offer a powerful guarantee for the government to build smart & safe cities.</p>
+					<!-- 公司简介英文E -->
+				<else/>
+				
+					<p>中國安芯控股有限公司（簡稱：中國安芯）是在香港聯交所掛牌交易的上市公司（股票代碼：01149.HK），截至2013年7月底市值逾68億元港幣。中國安芯總部位於香港特別行政區，以廣東深圳作為戰略發展的規劃中心與起點，已在江蘇淮安設立技術研發基地，並在深圳龍華建立生產及營銷總部。旗下子公司分佈吉林、江蘇、重慶等地。中國安芯專業為城市公共安全及工業生產安全領域提供智能安防系統，是智能安防領域的整體方案提供商、運營服務商及設備製造商。 </p>
+					<p>中國安芯以生產安全監控為立足點，著力於智慧城市、平安城市的建設。智能監測預警及應急救援指揮調度系統（簡稱：ISD系統）已成功應用在煤礦、非煤礦山、危險化學品、煙花爆竹、電力、石油、冶金等眾多領域。中國安芯目前為中國最大的ISD系統方案提供商及運營服務商。 </p>
+					<p>中國安芯於2012年從以色列企業收購獲得智能視頻分析技術，該技術擁有美國專利（美國專利編號：6937766、7184100）。在此基礎上，中國安芯成功研發智能視頻​​分析系統（簡稱iVAS系統）。該系統具有國際先進性，可服務於國防、公安、交通、消防、園區、城建、商業等眾多領域。配合完善的商業模式及智能安防前端設備，中國安芯為國家構建智慧城市、平安城市提供從前端設備到後台技術全面有力的保障。 </p>
+				</if>
+
+					
+
+
+
+
+				</div>
+			
+			</div>
+			<!-- left E -->
+			<!-- right S -->
+			<div class="innerRight">
+				<!-- rightbox S -->
+				<!-- 内页公告通函展示 -->
+				<div class="rightbox">
+					<load file="__PUBLIC__/annCirs.html"/>
+					<!-- <h4>{$hd.language._ANN_AND_CIR_}</h4>
+					<ul id="annCirs">
+					
+					</ul> -->
+				</div>
+				<!-- rightbox E -->
+				<!-- 内页年报展示 -->
+				<div class="rightbox rightbox1">
+					<load file="__PUBLIC__/IAReport.html"/>
+					<!-- <h4>{$hd.language._IREPORT_AREPORT_}</h4>
+					<ul id="IAReport">
+						
+					</ul> -->
+				</div>
+				<div class="rightbox2">
+					<!-- 豪威图片介绍 -->
+						<load file="__PUBLIC__/hw.html"/>
+					
+					
+				</div>
+
+			</div>
+			<!-- right E -->
+		</div>
+		<!-- 内页content E -->
+	</div>
+	<!-- 页面容器 E -->
+	<load file="__PUBLIC__/footer.html"/>
+	
+	

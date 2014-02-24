@@ -1,0 +1,39 @@
+/* 
+
+	TableCloth	
+	by Alen Grakalic, brought to you by cssglobe.com
+	
+*/
+
+/* general styles */
+
+#li_notice table, td{
+	font:13px Arial, Helvetica, sans-serif; 
+}
+#li_notice{height:auto ;float:right;width:800px}
+#li_notice table{width:800px;border-collapse:collapse;margin:1.5em 0;}
+#li_notice th, td{text-align:center;padding:.5em;border:1px solid #fff;height:32px;height:20px\9;}
+#li_notice th{background:#328aa4 url(../img/tr_back.gif) repeat-x;color:#fff;}
+#li_notice td{background:#e5f1f4;}
+
+/* tablecloth styles */
+#tb_notice{table-layout:fixed;width:*}
+#li_notice tr.even td{background:#e5f1f4;}
+#li_notice tr.odd td{background:#f8fbfc;}
+
+#li_notice th.over,#li_notice tr.even th.over,#li_notice tr.odd th.over{background:#4a98af;}
+#li_notice th.down,#li_notice tr.even th.down,#li_notice tr.odd th.down{background:#bce774;}
+#li_notice th.selected,#li_notice tr.even th.selected,#li_notice tr.odd th.selected{}
+
+#li_notice td.over,#li_notice tr.even td.over,#li_notice tr.odd td.over{background:#ecfbd4;}
+#li_notice td.down,#li_notice tr.even td.down,#li_notice tr.odd td.down{background:#bce774;color:#fff;}
+#li_notice td.selected,#li_notice tr.even td.selected,#li_notice tr.odd td.selected{background:#bce774;color:#555;}
+
+/* use this if you want to apply different styleing to empty table cells*/
+#li_notice td.empty,#li_notice tr.odd td.empty,#li_notice tr.even td.empty{background:#fff;}
+#tb_notice .sequence{width:40px}
+#tb_notice .td_title{width:290px;overflow:hidden; white-space:nowrap;text-align:left;}
+#tb_notice .td_title1{width:200px;overflow:hidden;text-align:center;}
+#tb_notice .del,.edit{width:50px}
+a {text-decoration: none;color:#333}
+a:hover{text-decoration: underline;color:#999}

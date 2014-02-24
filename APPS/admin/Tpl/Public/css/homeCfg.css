@@ -1,0 +1,19 @@
+.validateTips { border: 1px solid transparent; padding: 0.3em; }
+#video-dialog-form p{margin: 0 0 14px 0;  width: 100%; text-align: left;}
+#video-dialog-form label {
+	float:left;
+	width:60px;
+	margin: 8px 5px 0 0;
+	line-height: 12px;
+	text-align: right;
+}
+#video-dialog-form .text {text-align: left;}
+#homeCfg_mgr {
+	width: 700px;
+	float: right;
+	padding: 0 19px 0 0;
+}
+#homeCfg_mgr table {
+	border-top: 1px solid #ddd;
+	width: 700px;
+}

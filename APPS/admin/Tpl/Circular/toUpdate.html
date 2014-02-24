@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" media="all" href="__PUBLIC__/css/notice.css" />
+<link rel="stylesheet" type="text/css" media="all" href="__PUBLIC__/css/jquery-ui.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-ui.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/js/circular_update.js"></script>
+<title>修改通告-{$title}</title>
+</head>
+<div>
+            <form action="__CONTROL__/update" method="POST" enctype="multipart/form-data" class="u_form" >
+            <input type="hidden" id="id" name="id" value="{$data.id}" />
+            	<p><label for="creat_time">创建时间</label> <input type="text" id="create_time" name="create_time" value="{$data.create_time|strtotime|date:'Y-m-d',@@}"/></p>
+                <p><label for="title">中文标题</label> <input type="text" id="title" name="title" value="{$data.title}"/></p>
+                <p><label for="title_en">英文标题</label> <input type="text" id="title_en" name="title_en" value="{$data.title_en}"/></p>
+          		<p><label for="update_file">修改上传文件</label> <input type="button" id="update_file"/></p>
+                <p class="submit"><input type="submit" value="提交" /></p>
+    		</form>
+</div>
+<body>
+</body>
+</html>

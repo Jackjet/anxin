@@ -1,0 +1,79 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>后台登陆</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" media="all" href="__PUBLIC__/css/login.css" />
+<STYLE type=text/css>
+</STYLE>
+</HEAD>
+<BODY>
+<DIV id=div1>
+  <TABLE id=login cellSpacing=0 cellPadding=0 width=800 
+align=center>
+    <TBODY>
+      <TR id=main>
+        <TD>
+        <form action="__CONTROL__/load" method="post">
+          <TABLE cellSpacing=0 cellPadding=0 width="100%">
+            <TBODY>
+              <TR id="fr">
+                <TD colSpan=4>&nbsp;</TD>
+              </TR>
+              <TR height=30>
+                <TD width=380></TD>
+                <TD colspan="2"><span style="color:red">{$message}</span></TD>
+                <TD>&nbsp;</TD>
+              </TR>
+              <TR height=40>
+                <TD rowSpan=4></TD>
+                <TD>用户名：</TD>
+                <TD>
+                  <INPUT class=textbox id=username name=username>
+                </TD>
+                <TD width=120>&nbsp;</TD>
+              </TR>
+              <TR height=40>
+                <TD>密　码：</TD>
+                <TD>
+                  <INPUT class=textbox id=passowrd type=password 
+            name=password>
+                </TD>
+                <TD width=120>&nbsp;</TD>
+              </TR>
+              <TR height=40 valign="middle">
+                <TD>验证码：</TD>
+                <TD valign="middle" colSpan=2>
+				<script type='text/javascript'>  
+					function freshVerify() {   
+						document.getElementById('verifyImg').src='__CONTROL__/verify/'+Math.random();   
+					}   
+				</script> 
+                  <INPUT id="verify" size=4 name="verify">
+                 	<img style='cursor:pointer' title='刷新验证码' src='__CONTROL__/verify/' id='verifyImg' onClick='freshVerify()' height="22"/>  </TD>
+              </TR>
+              <TR height=40>
+                <TD></TD>
+                <TD align=right>
+                  <INPUT id=btnLogin type=submit value=" 登 录 " name=btnLogin>
+                </TD>
+                <TD width=120>&nbsp;</TD>
+              </TR>
+              <TR height=110>
+                <TD colSpan=4>&nbsp;</TD>
+              </TR>
+            </TBODY>
+          </TABLE>
+          </form>
+        </TD>
+      </TR>
+      <TR id=root height=104>
+        <TD>&nbsp;</TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+</DIV>
+<DIV id=div2 style="DISPLAY: none"></DIV>
+</CONTENTTEMPLATE>
+</BODY>
+</HTML>

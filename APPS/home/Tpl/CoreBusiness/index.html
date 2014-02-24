@@ -1,0 +1,101 @@
+	<load file="__PUBLIC__/header.html"/>
+	
+		<!-- 內頁導航圖區 S -->
+		<div class="innerImg">
+			<if value="L('_LANG_') eq 'en'">
+				
+					<img src="__PUBLIC__/images/hxyw-e.jpg" width="1000" height="135" alt="">
+				<else/>
+				
+					<img src="__PUBLIC__/images/hxyw.jpg" width="1000" height="135" alt="">
+			</if>
+
+			<ul class="secNav">
+					<li class="secOn"><a  href='__CONTROL__' >ISD</a>
+					
+					</li>
+					<li ><a href='__CONTROL__/issivas'>ISS-iVAS</a></li>
+					<li ><a href='__CONTROL__/issisd'>{$hd.language._ISS_ISD_}</a></li>
+			</ul>
+			
+			
+		</div>
+		<!-- 內頁導航圖區 E -->
+	
+		<div class="blank12"></div>
+		<!-- 内页content S -->
+		<div class="innerContent">
+			<!-- left S -->
+			<div class="innerLeft">
+				<div class="contents fullLeft">
+
+				<if value="L('_LANG_') eq 'en'">
+					<!-- isd 英文S -->
+						<div id="thirContent">
+				
+							<div id="thirWinBox">
+							<div class="wisd1"><a href="javascript:change_page('intro','isd');"><img src="__PUBLIC__/images/business/third/isd/jj-e.jpg" alt=""></a></div>
+							<div class="wisd2"><a href="javascript:change_page('presentation','isd');"><img src="__PUBLIC__/images/business/third/isd/jm-e.jpg" alt=""></a></div>
+							<div class="wisd3"><a href="javascript:change_page('issue','isd');"><img src="__PUBLIC__/images/business/third/isd/wt-e.jpg" alt=""></a></div>
+							<div class="wisd4"><a href="javascript:change_page('key_solution','isd');"><img src="__PUBLIC__/images/business/third/isd/dc-e.jpg" alt=""></a></div>
+							<div class="wisd5"><a href="javascript:change_page('prospect','isd');"><img src="__PUBLIC__/images/business/third/isd/zw-e.jpg" alt=""></a></div>
+							</div>
+						</div>
+					<!-- isd 英文E -->
+				<else/>
+					<!-- isd 中文S -->
+						<div id="thirContent">
+							<div id="thirWinBox">
+							<div class="wisd1"><a href="javascript:change_page('intro','isd');"><img src="__PUBLIC__/images/business/third/isd/jj.jpg" alt=""></a></div>
+
+							<div class="wisd2"><a href="javascript:change_page('presentation','isd');"><img src="__PUBLIC__/images/business/third/isd/jm.jpg" alt=""></a></div>
+
+							<div class="wisd3"><a href="javascript:change_page('issue','isd');"><img src="__PUBLIC__/images/business/third/isd/wt.jpg" alt=""></a></div>
+
+							<div class="wisd4"><a href="javascript:change_page('key_solution','isd');"><img src="__PUBLIC__/images/business/third/isd/dc.jpg" alt=""></a></div>
+							
+							<div class="wisd5"><a href="javascript:change_page('prospect','isd');"><img src="__PUBLIC__/images/business/third/isd/zw.jpg" alt=""></a></div>
+							</div>
+						</div>
+					<!-- isd 中文E -->
+				</if>
+				</div>
+			
+			</div>
+			<!-- left E -->
+			<!-- right S -->
+			<div class="innerRight">
+				<!-- rightbox S -->
+				<!-- 内页公告通函展示 -->
+				<div class="rightbox">
+					<load file="__PUBLIC__/annCirs.html"/>
+					<!-- <h4>{$hd.language._ANN_AND_CIR_}</h4>
+					<ul id="annCirs">
+					
+					</ul> -->
+				</div>
+				<!-- rightbox E -->
+				<!-- 内页年报展示 -->
+				<div class="rightbox rightbox1">
+					<load file="__PUBLIC__/IAReport.html"/>
+					<!-- <h4>{$hd.language._IREPORT_AREPORT_}</h4>
+					<ul id="IAReport">
+					
+					</ul> -->
+				</div>
+				<div class="rightbox2">
+					<!-- 豪威图片介绍 -->
+						<load file="__PUBLIC__/hw.html"/>
+					
+					
+				</div>
+
+			</div>
+			<!-- right E -->
+		</div>
+		<!-- 内页content E -->
+	</div>
+	<!-- 页面容器 E -->
+	<load file="__PUBLIC__/footer.html"/>
+	
+	

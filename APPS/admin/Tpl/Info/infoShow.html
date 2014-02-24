@@ -1,0 +1,147 @@
+<load file="__PUBLIC__/header.html"/>
+<!-- 文章信息列表 -->
+<!-- 頭部選項區S -->
+<ul class="top_title" style="text-align:left;">
+    <li>
+        <p class="menu_title">文章列表</p>
+    </li>
+   
+    <li>
+        <a href="__CONTROL__/addInfo" class="menu_title_a" >
+            <i class="icon icon-plus-sign"></i>&nbsp;添加内容
+        </a>
+    </li>
+    
+    <li ><p class="menu_title">分类筛选</p></li>
+    <li>
+        <form action="__URL__" method="post" id="searchForm">
+            <ul>
+                <li>
+                    <select name='listTitle' id='listTitle' style="width:100px;">
+                        <option value="0">全部</option>
+                       <foreach from="$slist" value="$v">
+                           <option value="{$v.id}">|-{$v.html}{$v.name}</option>
+                       </foreach>
+                    </select>
+                </li>
+              
+   
+                
+                <li class="menu_title">排序方式:</li>
+                <li>
+                    
+                    <select name='sort' id='sort'>
+
+                        <option value='addtime' <?php if($_GET['sort']=='addtime') echo "selected='selected'";?>>发表日期</option>
+                        <option value='orders' <?php if($_GET['sort']=='orders') echo "selected='selected'";?>>排序ID</option>
+                        <option value='id' <?php if($_GET['sort']=='id') echo "selected='selected'";?>>ID</option>
+
+                    </select>
+                </li>
+               
+                <li class="menu_title">關鍵字檢索:</li>
+                <li>
+                   
+                <select name='keyword' id='keyword'>
+                        <option value='title' <?php if($_GET['sort']=='addtime') echo "selected='selected'";?>>標題</option>
+                        <option value='id' <?php if($_GET['sort']=='id') echo "selected='selected'";?>>ID</option>
+
+                </select>
+                
+            	</li>
+            	<li>
+            		<input type="text" name="valueword" id="valueword" size="12"/>
+            		<input type="button" class="btn" id="searchBtn" value="檢索"/>
+            	</li>
+               
+            </ul>
+        </form>    
+
+    </li>
+    
+  
+</ul>
+<!-- 頭部選項區E -->
+<!-- 列表展示區S -->
+<table class="table">
+        <thead>
+            <tr class="top_channel">
+                <th>选择</th>
+               
+                <th align="center" width="50">文章ID</th>
+                <th width='20'></th>
+                <th align="center" width="250">标题</th>
+                <th align='center' width='88'>所属分类</th>
+                <th align='center' width='88'>发表日期</th>
+                <th align='center' width='130'>是否使用</th>
+                <th align="center">操作</th>
+            </tr>
+        </thead>
+        <tbody id="infoContent">
+            <if value="$list">
+                <foreach from="$list" value="$v">
+                    <tr class="tr_td">
+                        <td><input type="checkbox" size="2" value="{$v.id}" name="sid[]" /></td>
+                 
+                        <td>
+                            {$v.id}
+                        </td>
+                        <td></td>
+                        <td>
+                            <p><span>中文标题：</span>{$v.title}</p>
+                            <p><span>英文标题：</span>{$v.title_en}</p>
+                        </td>
+                        <td>{$v.name}</td>
+                        <td>{$v.addtime|date:"Y-m-d",@@}</td>
+                        <td>
+                            <if value="$v.isshow==1">
+                                显示
+                            <else/> 
+                                <span style="color:#f60;">隐藏</span>
+                            </if>
+                        </td>
+                        <td>
+                            <a href="__CONTROL__/editInfo/id/{$v.id}">编辑</a> | <a href="javascript:void(0);" onclick="delOne({$v.id})">删除</a>
+                        </td>
+                  
+                    </tr>
+
+                </foreach>
+	      <else/>
+            <tr>
+                <td></td>
+                <td colspan='7'>
+                    没有数据！
+                </td>
+            </tr>
+            </if>
+       
+
+            <tr class="tr_td">
+                <td></td>
+                <td align="center" colspan="7">
+                    {$page} 
+                </td>
+               
+            </tr>
+        </tbody>
+    </table>
+    <!-- 批量操作 -->
+    <ul class="bulkAction">
+        <li><input type="button" value="全选" id="sAll"/> </li>
+        <li> | </li>
+        <li><input type="button" value="反选" id="rsAll"/> </li>
+   
+        <li> | </li>
+        <li><input type="button" value="删除" id="sDel"/> </li>
+        <li> | </li>
+        <li><input type="button" value="显示" id="sShow"/> </li>
+        <li> | </li>
+        <li><input type="button" value="隐藏" id="sHide"/> </li>
+        <li> <input type="hidden" value="del" id="act" name="act" /></li>
+
+    </ul>
+   
+<!-- 列表展示區E -->
+</body>
+</html>

@@ -1,0 +1,130 @@
+	<load file="__PUBLIC__/header.html"/>
+	<js file="__PUBLIC__/js/press_report.js"/>
+		<!-- 內頁導航圖區 S -->
+		<div class="innerImg">
+			<if value="L('_LANG_') eq 'en'">
+				
+					<img src="__PUBLIC__/images/cmzx-e.jpg" width="1000" height="135" alt="">
+				<else/>
+				
+					<img src="__PUBLIC__/images/cmzx.jpg" width="1000" height="135" alt="">
+			</if>
+
+			<ul class="secNav">
+					<li ><a  href='__APP__/Media' >{$hd.language._COR_NEWS_}</a>
+					
+					</li>
+					<li class="secOn"><a href='__APP__/Media/mediareport'>{$hd.language._MEDIA_REPORT_}</a></li>
+					<li ><a href='__APP__/Media/analysis'>{$hd.language._INDUS_ANALYSIS_}</a></li>
+					<li ><a href='__APP__/Media/publicity'>{$hd.language._COR_PUBLIC_}</a></li>
+			</ul>
+			
+			
+		</div>
+		<!-- 內頁導航圖區 E -->
+		<!-- 三級菜單 S -->
+		<!-- <div class="thirNav">
+			<p><a href="">aaa</a>&nbsp;&nbsp;<a href="">bbb</a></p>
+		</div> -->
+		<!-- 三級菜單 E -->
+		<div class="blank12"></div>
+		<!-- 内页content S -->
+		<div class="innerContent">
+			<!-- left S -->
+			<div class="innerLeft">
+				<div class="contents">
+
+				<if value="L('_LANG_') eq 'en'">
+					<!-- 企业新闻英文S -->
+						<ul class="leftArc">
+							<foreach from="$list" value="$v">
+								
+								<li><span>{$v.create_time|strtotime|date:"Y M d",@@}</span>
+									<if value="$v.url">
+
+									<a href="{$v.url}" target="_blank" title="{$v.title_en|strtoupper}">{$v.title_en|strtoupper|showShort:40}</a>
+									
+									<else/>
+
+									<a href="__ROOT__/Public/press/en/{$v.file_url_en}" target="_blank" title="{$v.title_en|strtoupper}">{$v.title_en|strtoupper|showShort:40}</a>
+
+									</if>
+
+
+								</li>
+
+							</foreach>
+							
+						</ul>
+						<div class="cpage">{$epage}</div>
+					<!-- 企业新闻英文E -->
+				<else/>
+					<!-- 企业新闻中文S -->
+						<ul class="leftArc">
+							<foreach from="$list" value="$v">
+								
+								<li><span>{$v.create_time|strtotime|date:"Y年m月d日",@@}</span>
+									<if value="$v.url">
+										
+										<a href="{$v.url}" target="_blank" title="{$v.title}">{$v.title|showShort:80}</a>
+									
+									<else/>
+									
+										<a href="__ROOT__/Public/press/zh/{$v.file_url}" target="_blank" title="{$v.title}">{$v.title|showShort:80}</a>
+
+									</if>
+
+								</li>
+
+							</foreach>
+							
+						</ul>
+						<div class="cpage">{$page}</div>
+					<!-- 企业新闻中文E -->
+				</if>
+
+					
+
+
+
+
+				</div>
+			
+			</div>
+			<!-- left E -->
+			<!-- right S -->
+			<div class="innerRight">
+				<!-- rightbox S -->
+				<!-- 内页公告通函展示 -->
+				<div class="rightbox">
+						<load file="__PUBLIC__/annCirs.html"/>
+					<!-- <h4>{$hd.language._ANN_AND_CIR_}</h4>
+					<ul id="annCirs">
+					
+					</ul> -->
+				</div>
+				<!-- rightbox E -->
+				<!-- 内页年报展示 -->
+				<div class="rightbox rightbox1">
+						<load file="__PUBLIC__/IAReport.html"/>
+					<!-- <h4>{$hd.language._IREPORT_AREPORT_}</h4>
+					<ul id="IAReport">
+						
+					</ul> -->
+				</div>
+				<div class="rightbox2">
+					<!-- 豪威图片介绍 -->
+						<load file="__PUBLIC__/hw.html"/>
+					
+					
+				</div>
+
+			</div>
+			<!-- right E -->
+		</div>
+		<!-- 内页content E -->
+	</div>
+	<!-- 页面容器 E -->
+	<load file="__PUBLIC__/footer.html"/>
+	
+	

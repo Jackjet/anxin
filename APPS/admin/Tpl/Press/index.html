@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{$header_title}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--<script language="javascript" type="text/javascript" src="/axChina__PUBLIC__/js/tablecloth.js"></script>-->
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-ui.js"></script>
+
+<script type="text/javascript">
+    var app = '__APP__';
+    var public = '__ROOT__/Public';
+   
+</script>
+
+
+<script language="javascript" type="text/javascript" src="__PUBLIC__/js/press.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+<link rel="stylesheet" type="text/css" media="all" href="__PUBLIC__/css/notice.css" />
+<link rel="stylesheet" type="text/css" media="all" href="__PUBLIC__/css/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" media="all" href="__PUBLIC__/css/tablecloth.css" />
+
+</head>
+
+<body>
+    <div id="container">
+    	<div id="col_left">
+        	<load file="__PUBLIC__/leftnav.html"/>
+        </div>
+    	<div id="col_right">
+            <!-- 选择显示信息栏目 -->
+            <div class="showChannel">
+                <select name='chanshowChannelnel' id="showChannel">
+                        <option value="press">新闻press</option>
+                        <option value="announcement">公告Announcement</option>
+                        <option value="circular">通函Circular</option>
+                        <option value="sharecapital">股本申报表Sharecapital</option>
+                        <option value="ppt">演示文稿ppt</option>
+                        <option value="awards">资质荣誉Awards</option>
+                </select>            
+            </div>
+    		<div class="ajax_result"></div>
+            <div id="li_notice">
+                <table cellspacing="0" cellpadding="0" id="tb_notice">
+                    <tr>
+                        <th class="sequence">ID</th>
+                        <th class="td_title">中文标题</th>
+                        <th width="180">英文标题</th>
+                        <th width="80">类型</th>
+                        <th colspan="2">操作</th>
+                    </tr>
+                    <foreach from="$list" key="$k" value="$vo">
+                    <tr>
+                        <td class="sequence">{$vo.id}</td>
+                        <td class="td_title">
+                            <if value="$vo.istop eq 1">
+                                <span style="color:#f60">[置頂]</span>
+                            </if>
+                            <a href="__ROOT__/Public/press/zh/{$vo.file_url}" target="_blank">{$vo.title}</a></td>
+                        <td class="td_title"><a href="__ROOT__/Public/press/en/{$vo.file_url}" target="_blank">{$vo.title_en}</a></td>
+                        <td>
+                            <if value="$vo.type eq 1">
+                                企业新闻
+                                <else/>
+                                <if value="$vo.type eq 2">
+                                媒体报道
+                                <else/>
+                                行业信息
+                                </if>
+                            </if>
+                        </td>
+                        <td class="del"><span><a href="__CONTROL__/del?id={$vo.id}" onclick="return ondel();">删除</a></span></td>
+                        <td class="edit"><span><a href="__CONTROL__/toUpdate?id={$vo.id}">修改</a></span></td>
+                    </tr>
+                    </foreach>																					
+                </table>
+            </div>
+            <div class="blank"></div>
+            <div id="page_nav" class="green-black">{$page}</div>
+            <div class="blank"></div>
+            <div id="form_notice">
+                <h3>发布信息：</h3>
+                <form action="__CONTROL__" method="POST" enctype="multipart/form-data" class="u_form">
+                	<!-- <input type="hidden" name="max_file_size" value="2048000"/> -->
+
+                    <p><label for="creat_time">创建时间</label> <input type="text" id="create_time" name="create_time" value="{|date('Y-m-d')}"/></p>
+                    <p><label for="channel">发布栏目</label> 
+                        <select name='channel' id="channel">
+                            <option value="press_2">新闻press</option>
+                            <option value="announcement_2">公告Announcement</option>
+                            <option value="circular_2">通函Circular</option>
+                            <option value="sharecapital_2">股本申报表Sharecapital</option>
+                            <option value="ppt_2">演示文稿ppt</option>
+                            <option value="awards_2">资质荣誉Awards</option>
+                        </select>
+                    </p>
+                    <p id="showType"><label for="type">类型</label> 
+                        <select name='type' id="type">
+                            <option value="1">企业新闻</option>
+                            <option value="2">媒体报道</option>
+                            <option value="3">行业信息</option>
+                        </select>
+                    </p>
+       
+
+                    <p><label for="istop">是否置頂</label><input type="radio" value='0' name="istop" checked="checked"/>否&nbsp;<input type="radio" value="1" name="istop"/>是</p>
+                    
+                    <p><label for="isshow">是否显示</label><input type="radio" value='0' name="isshow" />否&nbsp;<input type="radio" value="1" name="isshow" checked="checked"/>是</p>
+
+                    <!-- <p><label for="url">鏈接地址</label> <input type="text" id="url" name="url" value="" size="28"/></p> -->
+                    <p class='surl'><label for="url" ><input  type="checkbox" name="isurl" id="isurl" />鏈接地址</label> <input class='d' type="text" id="url" name="url" value="" size="28" disabled/></p>
+                   
+                    <p><label for="orders">排序</label> <input type="text" id="orders" name="orders" value="1" size="3"/></p>
+
+
+                    <p><label for="title">中文标题</label> <input type="text" id="title" name="title" value=""/></p>
+                    <p><label for="des">中文描述</label> <textarea name="des"></textarea></p>
+
+                    <p><label for="title_en">英文标题</label> <input type="text" id="title_en" name="title_en" value=""/></p>
+                    <p><label for="des_en">英文描述</label> <textarea name="des_en"></textarea></p>
+
+
+                    <p><label for="pic_url">中文图片</label> <input type="file" id="pic_url" name="pic_url" /></p>
+                    <p><label for="pic_url">英文图片</label> <input type="file" id="pic_url_en" name="pic_url_en" /></p>
+
+
+
+                    <p><label for="press">中文文件上传</label> <input type="file" id="file_url" name="file_url" /></p>
+                    <p><label for="press_en">英文文件上传</label> <input type="file" id="file_url_en" name="file_url_en" /></p>
+                    <p class="submit"><input type="submit" value="添加新闻" /></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

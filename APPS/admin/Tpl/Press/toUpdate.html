@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" media="all" href="__PUBLIC__/css/notice.css" />
+<link rel="stylesheet" type="text/css" media="all" href="__PUBLIC__/css/jquery-ui.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-ui.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/js/press_update.js"></script>
+<title>修改新闻-{$title}</title>
+</head>
+<div><a href="__CONTROL__">返回</a></div>
+<div>
+            <form action="__CONTROL__/update" method="POST" enctype="multipart/form-data" class="u_form" >
+            <input type="hidden" id="id" name="id" value="{$data.id}" />
+            	<p><label for="creat_time">创建时间</label> <input type="text" id="create_time" name="create_time" value="{$data.create_time|date:'Y-m-d',@@}"/></p>
+                <p><label for="type">类型</label> 
+                        <select name='type'>
+                            <option value="1" <if value="$data.type eq 1">selected='selected'</if>>企业新闻</option>
+                            <option value="2" <if value="$data.type eq 2">selected='selected'</if>>媒体报道</option>
+                            <option value="3" <if value="$data.type eq 3">selected='selected'</if>>行业信息</option>
+                        </select>
+                    </p>
+                    <p><label for="istop">是否置頂</label><input type="radio" value='0' name="istop" <if value="$data.istop eq 0">checked='checked'</if>/>否&nbsp;<input type="radio" value="1" name="istop" <if value="$data.istop eq 1">checked='checked'</if>/>是</p>
+                <p><label for="url">鏈接地址</label> <input type="text" id="url" name="url" value="{$data.url}" size="28"/></p>
+
+                <p><label for="title">中文标题</label> <input type="text" id="title" name="title" value="{$data.title}"/></p>
+                    <p><label for="des">中文描述</label> <textarea name="des">{$data.des}</textarea></p>
+
+                <p><label for="title_en">英文标题</label> <input type="text" id="title_en" name="title_en" value="{$data.title_en}"/></p>
+                    <p><label for="des_en">英文描述</label> <textarea name="des_en">{$data.des_en}</textarea></p>
+                    <p><label for="pic_url">封面图片</label> <input type="file" id="pic_url" name="pic_url" /></p>
+
+          		<p><label for="update_file">修改上传文件</label> <input type="button" id="update_file"/></p>
+                <p class="submit"><input type="submit" value="提交" /></p>
+    		</form>
+</div>
+<body>
+</body>
+</html>

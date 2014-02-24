@@ -1,0 +1,56 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*公共样式*/
+*,html{padding: 0px;margin: 0px; font-size: 12px;font-family:"宋体","Arial Narrow";color: #525252;}
+body{font-size:12;}
+a{ text-decoration: none;color: #525252;}
+
+img{border:none;}
+ul,ol{list-style: none;}
+table{border-collapse: collapse;}
+hr{margin:10px 5px;height:1px;color:#ccc;_margin:5px 0;width:98%;}
+input{border: 1px solid #ccc;border-radius: 4px;height: 24px;line-height: 24px;}
+
+.btn{width:40px;height:24px;padding:0 5px;border:1px solid #ccc;background-color: #ededed;text-align: center;display:inline-block;border-radius: 5px;}
+.blank{clear: both;}
+
+.blank1{height:1px;clear:both;display:block;overflow: hidden;}
+.blank4{height:4px;clear:both;display:block;overflow: hidden;}
+.blank12{height:12px;clear:both;display:block;overflow: hidden;}
+
+
+.table{width: 98%;margin: 0 auto;border-bottom: 1px solid #ccc;margin-bottom: 20px;clear:both;}
+/*文章信息管理主容器*/
+#container{width:1050px;height:auto;min-height:410px;}
+#col_left{height:auto;border-right:none;}
+#myright{float:right;border:1px solid #ccc;width:808px;min-height:650px;_height:650px;border-radius:5px;margin:15px 0;}
+.contentHead{height:30px;padding:10px 0 0 10px;border-bottom: 2px solid #ccc;}
+#myiframe{width:100%;height:600px;border:none;display: block;}
+ul.top_title{display:block;}
+ul.top_title li{float:left;padding:5px 5px;vertical-align:center;}
+ul.top_title li .menu_title{border:1px solid #ccc;padding:4px 8px;border-radius:5px;background-color:#C8A6EF;color:#fff;}
+ul.top_title li a.menu_title_a{border:1px solid #C8A6EF;padding:4px 8px;display:inline-block;float:left;}
+ul.top_title li a.menu_title_a:hover{background-color:#cdcdcd;color:#444;}
+
+/*定義table樣式*/
+.table  th{background-color:#ddd;padding:5px 0;}
+.table  td{padding:8px 5px;text-align: left;}
+.table .tr_td{}
+.table .tron{background-color:#eee;}
+
+/*批量操作栏*/
+.bulkAction li{float:left;padding:0 5px;}
+
+/*自定义内容搜索搜索*/
+#search h1{font-size: 18px;line-height:30px;padding:10px;}
+#search ul{padding:10px;}
+#search ul li{line-height: 20px;}
+#search #keyword{color:#aaa;}
+
+.searchResult{padding: 10px;}
+.searchResult h1{color:#FF6600;font-size: 18px;}
+.searchResult table td{line-height: 36px;text-align:center;padding:10px;}
+.searchResult table tr.head{background-color:#328AA4;color:#fff;}
+.searchResult table tr.head td{color:#fff;font-weight: bold;padding:0;}
+

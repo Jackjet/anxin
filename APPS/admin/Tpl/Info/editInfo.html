@@ -1,0 +1,217 @@
+<load file="__PUBLIC__/header.html"/>
+<!-- 载入jqueryeasyui 插件 -->
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/data/jqueryeasyui/easyui.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/data/jqueryeasyui/icon.css" />
+<script type="text/javascript" src="__PUBLIC__/data/jqueryeasyui/jquery.easyui.min.js"></script>
+
+
+<!-- 文章信息列表 -->
+<!-- 頭部選項區S -->
+<ul class="top_title">
+    <li>
+        <p class="menu_title">编辑文章</p>
+    </li>
+   
+    <li>
+        <a href="__CONTROL__/infoShow" class="menu_title_a" >
+            <i class="icon icon-plus-sign"></i>&nbsp;返回
+        </a>
+    </li>
+    
+   
+    
+  
+</ul>
+<!-- 頭部選項區E -->
+<!-- 添加內容表單S -->
+<form action="__METH__" method="post" name="addInfo" id="addInfo" enctype="multipart/form-data">
+    <table class="table">
+        <thead>
+            <tr>
+                <th colspan="2">编辑文章</th>
+            </tr>
+        </thead>
+        <tbody>
+
+             <tr>
+                <td align='right' width='10%'>所属分类：</td>
+                <td>
+                    <select name="lid">
+                        
+                       <foreach from="$slist" value="$v">
+                           <option value="{$v.id}" <if value="$data.lid==$v.id">selected='selected'</if>>|-{$v.html}{$v.name}</option>
+                       </foreach>
+                        
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td align='right' width='10%'>是否使用：</td>
+                <td align="left">
+                    <label><input type="radio" name="isshow" value="1" <if value="$data.isshow==1">checked="checked"</if> class="radio"/>&nbsp;使用</label>&nbsp;&nbsp;
+                    <label><input type="radio" name="isshow" value="0" <if value="$data.isshow!=1">checked="checked"</if> class="radio"/>&nbsp;禁止</label>
+                </td>
+            </tr>
+            <tr>
+                <td align='right' width='10%'>是否置顶：</td>
+                <td align="left">
+                    <label><input type="radio" name="istop" value="0" <if value="$data.istop==0">checked="checked"</if> class="radio"/>&nbsp;否</label>&nbsp;&nbsp;
+                    <label><input type="radio" name="istop" value="1" <if value="$data.istop==1">checked="checked"</if> class="radio"/>&nbsp;是</label>
+
+                </td>
+            </tr>
+            <tr>
+                <td align='right'>发布日期</td>
+                <td>
+                    <input class="easyui-datebox"  name='addtime' data-options="formatter:myformatter,parser:myparser" value="{$data.addtime|date:"Y-m-d",@@}"></input>
+                   
+                    <span class='remark'>日期格式：****-**-**  ,留空则使用当前日期</span>
+                </td>
+            </tr>
+            <tr>
+                <td align='right'>排序</td>
+                <td>
+                    <input name='orders' value="{$data.orders}" size="2" id="setOrder"></input>
+                   
+                    <span class='remark'>数字小的靠前</span>
+                </td>
+            </tr>
+                
+            </tbody>
+        </table>
+
+            <!-- tab选项卡S -->
+          
+       <div class="easyui-tabs" style="">
+        <div title="中文" style="padding:10px">
+            <table class="table">
+                <!-- 中文S -->
+                    <tr>
+                <td align='right' width='10%'>标题：</td>
+                <td>
+                    <input type='text' class='input-big' name='title' value="{$data.title}"/>
+                </td>
+            </tr>
+           
+
+            
+         
+             <tr>
+                <td align='right'>链接地址</td>
+                <td>
+                    <input type='text' class='input-big' name='file_url' value="{$data.file_url}"/>
+                    <span class='remark'>存放链接网址，无则留空</span>
+                </td>
+            </tr>
+            <tr>
+                <td align='right'>封面图</td>
+                <td>
+                    <input type='file' class='input-big' name='coverimg' />
+                    <span class='remark'>存放封面图，无则留空</span>
+                </td>
+            </tr>
+            <tr>
+                <td align='right'>描述</td>
+                <td>
+                    <textarea name="des">{$data.des}</textarea>
+                    <span class='remark'>存放文章描述，无则留空</span>
+                </td>
+            </tr>
+            <tr>
+                <td align='right'>内容：</td>
+                <td>
+                  
+                <keditor name="content" content="{$data.content}"/>
+                
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan='2' align='center'>
+                   
+                </td>
+            </tr>
+                <!-- 中文E -->
+            </table>
+        </div>
+        <div title="英文" style="padding:10px">
+                <table class="table">
+                <!-- 英文S -->
+                    <tr>
+                <td align='right' width='10%'>英文标题：</td>
+                <td>
+                    <input type='text' class='input-big' name='title_en' value="{$data.title_en}"/>
+                </td>
+            </tr>
+
+         
+             <tr>
+                <td align='right'>英文链接地址</td>
+                <td>
+                    <input type='text' class='input-big' name='file_url_en' value="{$data.file_url_en}"/>
+                    <span class='remark'>存放链接网址，无则留空</span>
+                </td>
+            </tr>
+            <tr>
+                <td align='right'>英文封面图</td>
+                <td>
+                    <input type='file' class='input-big' name='coverimg_en' />
+                    <span class='remark'>存放英文封面图，无则留空</span>
+                </td>
+            </tr>
+            <tr>
+                <td align='right'>英文描述</td>
+                <td>
+                    <textarea name="des_en">{$data.des_en}</textarea>
+                    <span class='remark'>存放文章描述，无则留空</span>
+                </td>
+            </tr>
+            <tr>
+                <td align='right'>英文内容：</td>
+                <td>
+                  
+                <keditor name="content_en" content="{$data.content_en}"/>
+                
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan='2' align='center'>
+                   
+                </td>
+            </tr>
+                <!-- 英文E -->
+            </table>
+        </div>
+       
+    </div>
+            <!-- tab选项卡E -->
+            <div class="submit" style="height:45px;margin-top:20px;text-align:center;">
+                <input type="hidden" value="{$data.id}" name='id'/>
+                 <input type='submit' class='menu_submit' value='提交修改'/>
+            </div>
+        
+</form>
+<!-- 添加內容表單E-->
+<script type="text/javascript">
+        function myformatter(date){
+            var y = date.getFullYear();
+            var m = date.getMonth()+1;
+            var d = date.getDate();
+            return y+'-'+(m<10?('0'+m):m)+'-'+(d<10?('0'+d):d);
+        }
+        function myparser(s){
+            if (!s) return new Date();
+            var ss = (s.split('-'));
+            var y = parseInt(ss[0],10);
+            var m = parseInt(ss[1],10);
+            var d = parseInt(ss[2],10);
+            if (!isNaN(y) && !isNaN(m) && !isNaN(d)){
+                return new Date(y,m-1,d);
+            } else {
+                return new Date();
+            }
+        }
+    </script>
+</body>
+</html>

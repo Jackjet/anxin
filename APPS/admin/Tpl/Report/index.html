@@ -1,0 +1,101 @@
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{$header_title}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--<script language="javascript" type="text/javascript" src="/axChina__PUBLIC__/js/tablecloth.js"></script>-->
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-ui.js"></script>
+<script type="text/javascript">
+    var app = '__APP__';
+    var public = '__ROOT__/Public';
+</script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/js/report.js"></script>
+<link rel="stylesheet" type="text/css" media="all" href="__PUBLIC__/css/notice.css" />
+<link rel="stylesheet" type="text/css" media="all" href="__PUBLIC__/css/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" media="all" href="__PUBLIC__/css/tablecloth.css" />
+
+</head>
+
+<body>
+    <div id="container">
+    	<div id="col_left">
+        	<load file="Public/leftnav.html"/>
+        </div>
+    	<div id="col_right">
+            <div class="ajax_result"></div>
+            <div id="li_notice" style="height:520px">
+                <table cellspacing="0" cellpadding="0" id="tb_notice">
+                    <tr>
+                        <th class="sequence">ID</th>
+                        <th class="create_year">年份</th>
+                        <th class="td_title1">年报</th>
+                        <th class="td_title1">中期报告</th>
+                        <th colspan="2">操作</th>
+                    </tr>
+                    <foreach from="$list" value="$vo">
+                    <tr>
+                        <td class="sequence">{$vo.id}</td>
+                        <td><span>{$vo.create_year}</span></td>
+                        <td class="td_title1"><a href="__ROOT__/Public/reports/zh/{$vo.a_url}" target="_blank"><IMG src="__ROOT__/Public/reports/images/{$vo.a_img}" border="0" width="100" height="136"></a></td>
+                        <td class="td_title1"><a href="__ROOT__/Public/reports/zh/{$vo.i_url}" target="_blank"><IMG src="__ROOT__/Public/reports/images/{$vo.i_img}" border="0" width="100" height="136"></a></td>
+                        <td class="del"><span><a href="javascript:ajax_del_report('{$vo.id}')">删除</a></span></td>
+                        <td class="edit"><span><a href="__CONTROL__/toUpdate?id={$vo.id}">修改</a></span></td>
+                    </tr>
+                    </foreach>																					
+                </table>
+                 <div id="page_nav" class="green-black">{$page}</div>
+            </div>
+          
+            <div id="form_report" style="height:auto;">
+                 <p><span style="color:#f80;">选择上传方式：</span>(直接上传为直接通过后台上传文件，ftp上传为通过ftp上传文件，再从后台保存文件名)</p>
+                <form action="__URL__/upload" method="POST" enctype="multipart/form-data" class="u_form">
+                	
+                     <input type="radio" name="uptype" value='1' checked="checked"/>ftp上传直接上传&nbsp;&nbsp;&nbsp;<input type="radio" name="uptype" value='2' />直接上传
+                     <p></p>
+                       
+                       <p><label for="creat_time">创建时间</label> <input type="text" id="create_time" name="create_time" value="{|date('Y-m-d')}"/></p>
+                       
+                      <!-- 备用 上传文件名- 文件则通过ftp上传 -->
+                    <div class="up_ftp">
+                        <p style="color:red;font-size:14px;font-weight:bold;">通过地址上传,填写名称</p>
+                        <p style="color:#f60;">ftp上传地址为:根/Pulibc/reports/zh(中文)<br/>根/Pulibc/reports/en(英文)</p>
+                        <!-- 年报 -->
+                        <p><label for="notice">年报封面图片-中文</label> <input type="file" id="a_img_zh_ftp" name="a_img_zh_ftp" /></p>
+                        <p><label for="notice">年报封面图片-英文</label> <input type="file" id="a_img_en_ftp" name="a_img_en_ftp" /></p>
+
+                        <p><label for="notice">年报文档名称(中文)</label> <input type="text" id="a_name" name="a_name" /></p>
+                        <p><label for="notice">年报文档名称(英文)</label> <input type="text" id="a_name_en" name="a_name_en" /></p>
+
+
+                        <!-- 中期 -->
+                        <p><label for="notice">中期封面图片-中文</label> <input type="file" id="i_img_zh_ftp" name="i_img_zh_ftp" /></p>
+                        <p><label for="notice">中期封面图片-英文</label> <input type="file" id="i_img_en_ftp" name="i_img_en_ftp" /></p>
+
+                        <p><label for="notice">中期报告文档名称(中文)</label> <input type="text" id="i_name" name="i_name" /></p>
+                        <p><label for="notice">中期报告文档名称(英文)</label> <input type="text" id="i_name_en" name="i_name_en" /></p>
+                    </div>
+
+                    <!-- 直接上传 -->
+                     <div class='updirectly' style="display:none;">
+                      
+                        <p><label for="notice">年报封面图片 - 中文</label> <input type="file" id="a_img_zh" name="a_img_zh" /></p>
+                        <p><label for="notice">年报封面图片 - 英文</label> <input type="file" id="a_img_en" name="a_img_en" /></p>
+
+                        <p><label for="notice">年报文档(中文)</label> <input type="file" id="a_url" name="a_url" /></p>
+                        <p><label for="notice">年报文档(英文)</label> <input type="file" id="a_url_en" name="a_url_en" /></p>
+                        <hr/>
+                        <p><label for="notice">中期封面图片 - 中文</label> <input type="file" id="i_img" name="i_img_zh" /></p>
+                        <p><label for="notice">中期封面图片 - 英文</label> <input type="file" id="i_img" name="i_img_en" /></p>
+                        <p><label for="notice">中期报告文档(中文)</label> <input type="file" id="i_url" name="i_url" /></p>
+                        <p><label for="notice">中期报告文档(英文)</label> <input type="file" id="i_url_en" name="i_url_en" /></p>
+                     </div>
+
+                    <p><input type="submit" value="提交" id="submit" /></p>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+</body>

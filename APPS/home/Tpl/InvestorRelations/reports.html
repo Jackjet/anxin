@@ -1,0 +1,156 @@
+        <load file="__PUBLIC__/header.html"/>
+		<!-- 內頁導航圖區 S -->
+		<div class="innerImg">
+			<if value="L('_LANG_') eq 'en'">
+				
+					<img src="__PUBLIC__/images/tzzgx-e.jpg" width="1000" height="135" alt="">
+				<else/>
+				
+					<img src="__PUBLIC__/images/tzzgx.jpg" width="1000" height="135" alt="">
+			</if>
+
+			<ul class="secNav">
+					<li ><a  href='__CONTROL__' >{$hd.language._CORP_INFO}</a>
+					
+					</li>
+					<li class="secOn"><a href='__CONTROL__/reports'>{$hd.language._REPORT_TXT_}</a></li>
+					<li ><a href='__CONTROL__/announcements'>{$hd.language._ANNOUNCEMENT_}</a></li>
+					<li ><a href='__CONTROL__/circulars'>{$hd.language._CIRCULAR}</a></li>
+					<li ><a href='__CONTROL__/sharecapital'>{$hd.language._GBSB_}</a></li>
+					<li ><a href='__CONTROL__/powerpoint'>{$hd.language._POWERPOINT_}</a></li>
+					
+			</ul>
+			
+			
+		</div>
+		<!-- 內頁導航圖區 E -->
+		<!-- 三級菜單 S -->
+		<!-- <div class="thirNav">
+			<p><a href="">aaa</a>&nbsp;&nbsp;<a href="">bbb</a></p>
+		</div> -->
+		<!-- 三級菜單 E -->
+		<div class="blank12"></div>
+		<!-- 内页content S -->
+		<div class="innerContent">
+			<!-- left S -->
+			<div class="innerLeft">
+				<div class="contents">
+
+				<if value="L('_LANG_') eq 'en'">
+                <!-- 英文S -->
+                    <!-- 中期报告/年报S -->
+                    <table class="reports_table" cellspacing="0" cellpadding="0" border="0">
+                    
+                    	<tbody>
+                    		<foreach from="$data.list" value="$v">
+                    			<tr>
+	                    			<td style="width:150px;">{$v.create_year}</td>
+	                    			<!-- 年报 -->
+	                    			<td style="">
+	                    				<div >
+	                    					<a href="__ROOT__/Public/reports/en/{$v.a_url_en}" target="_blank"><img src="__ROOT__/Public/reports/images/{$v.a_img_en}" width="100" height="136"/></a>
+	                    					<p><a href="__ROOT__/Public/reports/en/{$v.a_url_en}" target="_blank">{$hd.language._A_REPORT_}</a></p>
+	                    				</div>
+	                    			</td>
+	                    			<!-- 中期 -->
+	                    			<td>
+	                    				<div>
+	                    					<a href="__ROOT__/Public/reports/en/{$v.i_url_en}" target="_blank"><img src="__ROOT__/Public/reports/images/{$v.i_img_en}" width="100" height="136"/></a>
+	                    					<p><a href="__ROOT__/Public/reports/en/{$v.i_url_en}" target="_blank">{$hd.language._I_REPORT_}</a></p>
+	                    				</div>
+                    			</td>
+                    			</tr>
+                    		</foreach>
+                    		
+                    	</tbody>
+                    </table>
+                    <div class="cpage">
+                        {$data.page}
+                    </div>
+
+
+
+                <!-- 中期报告/年报E -->
+				<!-- 英文E -->
+				<else/>
+                <!-- 中文S -->
+                <!-- 中期报告/年报S -->
+                    <table class="reports_table" cellspacing="0" cellpadding="0" border="0">
+                    
+                    	<tbody>
+                    		<foreach from="$data.list" value="$v">
+                    			<tr>
+	                    			<td style="width:150px;">{$v.create_year}</td>
+	                    			<!-- 年报 -->
+	                    			<td style="">
+	                    				
+	                    					<a href="__ROOT__/Public/reports/zh/{$v.a_url}" target="_blank">
+	                    						<img src="__ROOT__/Public/reports/images/{$v.a_img}" width="100" height="136"/>
+	                    						<p >{$hd.language._A_REPORT_}</p>
+	                    					</a>
+	                    				
+	                    			</td>
+	                    			<!-- 中期 -->
+	                    			<td>
+	                    				
+	                    					<a href="__ROOT__/Public/reports/zh/{$v.i_url}" target="_blank">
+	                    						<img src="__ROOT__/Public/reports/images/{$v.i_img}" width="100" height="136"/>
+	                    						<p>{$hd.language._I_REPORT_}</p>
+	                    					</a>
+	                    		
+                    			</td>
+                    			</tr>
+                    		</foreach>
+                    		
+                    	</tbody>
+                    </table>
+                    <div class="cpage">
+                        {$data.page}
+                    </div>
+
+
+
+                <!-- 中期报告/年报E -->
+                <!-- 中文E -->
+				</if>
+
+					
+
+
+
+
+				</div>
+			
+			</div>
+			<!-- left E -->
+			<!-- right S -->
+			<div class="innerRight">
+				<!-- rightbox S -->
+				<!-- 内页公告通函展示 -->
+				<div class="rightbox">
+					<load file="__PUBLIC__/annCirs.html"/>
+					<!-- <h4>{$hd.language._ANN_AND_CIR_}</h4>
+					<ul id="annCirs">
+					
+					</ul> -->
+				</div>
+				<!-- rightbox E -->
+				<!-- 内页年报展示 -->
+				<div class="rightbox rightbox1">
+					<load file="__PUBLIC__/innerPress.html"/>
+						<!-- <h4>{$hd.language._COMPANY_NEWS_}</h4>
+						
+						<ul id="innerPress"></ul> -->
+				</div>
+				<div class="rightbox2">
+                     <load file="__PUBLIC__/hw.html"/>
+					
+				</div>
+
+			</div>
+			<!-- right E -->
+		</div>
+		<!-- 内页content E -->
+	</div>
+	<!-- 页面容器 E -->
+        <load file="__PUBLIC__/footer.html"/>

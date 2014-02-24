@@ -1,0 +1,153 @@
+        <load file="__PUBLIC__/header.html"/>
+        <js file="__PUBLIC__/js/cirs.js"/>
+		<!-- 內頁導航圖區 S -->
+		<div class="innerImg">
+			<if value="L('_LANG_') eq 'en'">
+				
+					<img src="__PUBLIC__/images/tzzgx-e.jpg" width="1000" height="135" alt="">
+				<else/>
+				
+					<img src="__PUBLIC__/images/tzzgx.jpg" width="1000" height="135" alt="">
+			</if>
+
+			<ul class="secNav">
+					<li ><a  href='__CONTROL__' >{$hd.language._CORP_INFO}</a>
+					
+					</li>
+					<li ><a href='__CONTROL__/reports'>{$hd.language._REPORT_TXT_}</a></li>
+					<li ><a href='__CONTROL__/announcements'>{$hd.language._ANNOUNCEMENT_}</a></li>
+					<li class="secOn"><a href='__CONTROL__/circulars'>{$hd.language._CIRCULAR}</a></li>
+					<li ><a href='__CONTROL__/sharecapital'>{$hd.language._GBSB_}</a></li>
+			</ul>
+			
+			
+		</div>
+		<!-- 內頁導航圖區 E -->
+		<!-- 三級菜單 S -->
+		<!-- <div class="thirNav">
+			<p><a href="">aaa</a>&nbsp;&nbsp;<a href="">bbb</a></p>
+		</div> -->
+		<!-- 三級菜單 E -->
+		<div class="blank12"></div>
+		<!-- 内页content S -->
+		<div class="innerContent">
+			<!-- left S -->
+			<div class="innerLeft">
+				<div class="contents">
+
+				<if value="L('_LANG_') eq 'en'">
+                <!-- 英文S -->
+                   <div class="annsBoxTitle">
+                		<p >
+                			<select name="year">
+                				<foreach from="$years" value="$v">
+                					<if value="$now_year = $v.year">
+                						<option value="{$v.year}" selected="selected">{$v.year}</option>
+                					<else/>
+                						<option value="{$v.year}">{$v.year}</option>
+                					</if>
+                				</foreach>
+                				
+                			</select>
+                		</p>
+                	</div>
+                	<div class="annBox">
+                		<h4 >{$now_year}</h4>
+
+                		<table id="annBoxContent" cellspacing="0" cellpadding="0" border="0">
+                		
+                			<tbody>
+                				<foreach from="$cir" value="$v">
+                				<tr>
+                					<td width="120">{$v.create_time|strtotime|date:"Y  M d",@@}</td>
+                					<td><a href="__ROOT__/Public/circulars/en/{$v.file_url_en}" target="_blank" title="{$v.title_en|strtoupper}">{$v.title_en|strtoupper|showShort:60}</a></td>
+                				</tr>
+                				</foreach>
+                			</tbody>
+                		</table>
+	                	<div class="cpage">
+	                			{$epage}
+	                	</div>
+                		
+                	</div>
+				<!-- 英文E -->
+				<else/>
+                <!-- 中文S -->
+                	<div class="annsBoxTitle">
+                		<p >
+                			<select name="year">
+                				<foreach from="$years" value="$v">
+                					<if value="$now_year = $v.year">
+                						<option value="{$v.year}" selected="selected">{$v.year}</option>
+                					<else/>
+                						<option value="{$v.year}">{$v.year}</option>
+                					</if>
+                				</foreach>
+                				
+                			</select>
+                		</p>
+                	</div>
+                	<div class="annBox">
+                		<h4 >{$now_year}</h4>
+
+                		<table id="annBoxContent" cellspacing="0" cellpadding="0" border="0">
+                		
+                			<tbody>
+                				<foreach from="$cir" value="$v">
+                				<tr>
+                					<td width="120">{$v.create_time|strtotime|date:"Y年m月d日",@@}</td>
+                					<td><a href="__ROOT__/Public/circulars/zh/{$v.file_url}" target="_blank" title="{$v.title}">{$v.title|showShort:80}</a></td>
+                				</tr>
+                				</foreach>
+                			</tbody>
+                		</table>
+	                	<div class="cpage">
+	                			{$page}
+	                	</div>
+                		
+                	</div>
+                	
+                
+                <!-- 中文E -->
+				</if>
+
+					
+
+
+
+
+				</div>
+			
+			</div>
+			<!-- left E -->
+			<!-- right S -->
+			<div class="innerRight">
+				<!-- rightbox S -->
+				<!-- 内页公告通函展示 -->
+				<div class="rightbox">
+					<load file="__PUBLIC__/innerPress.html"/>
+					<!-- <h4>{$hd.language._COMPANY_NEWS_}</h4>
+					
+					<ul id="innerPress"></ul> -->
+				</div>
+				<!-- rightbox E -->
+				<!-- 内页年报展示 -->
+				<div class="rightbox rightbox1">
+					<load file="__PUBLIC__/IAReport.html"/>
+					<!-- <h4>{$hd.language._IREPORT_AREPORT_}</h4>
+					<ul id="IAReport">
+					
+					</ul> -->
+				</div>
+				<div class="rightbox2">
+                     <load file="__PUBLIC__/hw.html"/>
+					
+				</div>
+
+			</div>
+			<!-- right E -->
+		</div>
+		<!-- 内页content E -->
+	</div>
+	<!-- 页面容器 E -->
+        <load file="__PUBLIC__/footer.html"/>

@@ -1,0 +1,115 @@
+	<load file="__PUBLIC__/header.html"/>
+
+		<!-- 內頁導航圖區 S -->
+		<div class="innerImg">
+			<if value="L('_LANG_') eq 'en'">
+				
+					<img src="__PUBLIC__/images/hxyw-e.jpg" width="1000" height="135" alt="">
+				<else/>
+				
+					<img src="__PUBLIC__/images/hxyw.jpg" width="1000" height="135" alt="">
+			</if>
+
+			<ul class="secNav">
+					<li ><a  href='__CONTROL__' >ISD</a>
+					
+					</li>
+					<li class="secOn"><a href='__CONTROL__/issivas'>ISS-iVAS</a></li>
+					<li ><a href='__CONTROL__/issisd'>{$hd.language._ISS_ISD_}</a></li>
+			</ul>
+			
+			
+		</div>
+		<!-- 內頁導航圖區 E -->
+		
+		<div class="blank12"></div>
+		<!-- 内页content S -->
+		<div class="innerContent">
+			<!-- left S -->
+			<div class="innerLeft">
+				<div class="contents fullLeft">
+
+				<if value="L('_LANG_') eq 'en'">
+					<div id="thirContent">
+
+					<!-- issivas 英文S -->
+						<div id="thirWinBox">
+							<!-- 系統簡介 -->
+							<div class="wivas1"><a href="javascript:change_page('intro','iss-ivas');"><img src="__PUBLIC__/images/business/third/iss/xtjj-e.jpg" alt=""></a></div>
+							<!-- 系統特點 -->
+							<div class="wivas2"><a href="javascript:change_page('feature','iss-ivas');"><img src="__PUBLIC__/images/business/third/iss/td-e.jpg" alt=""></a></div>
+							<!-- 應用領域 -->
+							
+							<div class="wivas3"><a href="__PUBLIC__/data/apparea_en.pdf" target="_blank"><img src="__PUBLIC__/images/business/third/iss/ly-e.jpg" alt=""></a></div>
+							<!-- 規則介紹 -->
+							<div class="wivas4"><a href="javascript:change_page('rule','iss-ivas');"><img src="__PUBLIC__/images/business/third/iss/gz-e.jpg" alt=""></a></div>
+							<!-- 成功案例 -->
+							<div class="wivas5"><a href="javascript:change_page('success','iss-ivas');"><img src="__PUBLIC__/images/business/third/iss/al-e.jpg" alt=""></a></div>
+							</div>
+					<!-- issivas 英文E -->
+					</div>
+				<else/>
+					<div id="thirContent">
+					<!-- issivas 中文S -->
+						<div id="thirWinBox">
+							<!-- 系統簡介 -->
+							<div class="wivas1"><a href="javascript:change_page('intro','iss-ivas');"><img src="__PUBLIC__/images/business/third/iss/xtjj.jpg" alt=""></a></div>
+							<!-- 系統特點 -->
+							<div class="wivas2"><a href="javascript:change_page('feature','iss-ivas');"><img src="__PUBLIC__/images/business/third/iss/td.jpg" alt=""></a></div>
+							<!-- 應用領域 -->
+							
+							<div class="wivas3"><a href="__PUBLIC__/data/apparea.pdf" target="_blank"><img src="__PUBLIC__/images/business/third/iss/ly.jpg" alt=""></a></div>
+							<!-- 規則介紹 -->
+							<div class="wivas4"><a href="javascript:change_page('rule','iss-ivas');"><img src="__PUBLIC__/images/business/third/iss/gz.jpg" alt=""></a></div>
+							<!-- 成功案例 -->
+							<div class="wivas5"><a href="javascript:change_page('success','iss-ivas');"><img src="__PUBLIC__/images/business/third/iss/al.jpg" alt=""></a></div>
+						</div>
+					<!-- issivas 中文E -->
+					</div>
+				</if>
+
+					
+
+
+
+
+				</div>
+			
+			</div>
+			<!-- left E -->
+			<!-- right S -->
+			<div class="innerRight">
+				<!-- rightbox S -->
+				<!-- 内页公告通函展示 -->
+				<div class="rightbox">
+					<load file="__PUBLIC__/annCirs.html"/>
+					<!-- <h4>{$hd.language._ANN_AND_CIR_}</h4>
+					<ul id="annCirs">
+					
+					</ul> -->
+				</div>
+				<!-- rightbox E -->
+				<!-- 内页年报展示 -->
+				<div class="rightbox rightbox1">
+					<load file="__PUBLIC__/IAReport.html"/>
+					<!-- <h4>{$hd.language._IREPORT_AREPORT_}</h4>
+					<ul id="IAReport">
+						
+					</ul> -->
+				</div>
+				<div class="rightbox2">
+					<!-- 豪威图片介绍 -->
+						<load file="__PUBLIC__/hw.html"/>
+					
+					
+				</div>
+
+			</div>
+			<!-- right E -->
+		</div>
+		<!-- 内页content E -->
+	</div>
+	<!-- 页面容器 E -->
+	<load file="__PUBLIC__/footer.html"/>
+	
+	

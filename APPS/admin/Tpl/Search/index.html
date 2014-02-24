@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>中國安芯網站 - 後臺管理系統 - 搜索</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--<script language="javascript" type="text/javascript" src="/axChina__PUBLIC__/js/tablecloth.js"></script>-->
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+
+<script type="text/javascript">
+    var app = '__APP__';
+    var public = '__ROOT__/Public';
+    
+</script>
+<link rel="stylesheet" type="text/css" media="all" href="__PUBLIC__/css/notice.css" />
+
+<link rel="stylesheet" type="text/css" media="all" href="__PUBLIC__/css/common.css" />
+
+
+</head>
+
+<body>
+    <div id="container">
+    	<div id="col_left">
+        	<load file="__PUBLIC__/leftnav.html"/>
+
+        </div>
+    	<div id="myright">
+           
+           <!-- 搜索 -->
+           <form action="__METH__" method="post" name="search" id="search">
+               <h1>内容搜索</h1>
+                <ul>
+                    <li>选择栏目：</li>
+                 
+                    <li>
+                        <select name="searchType" >
+                            <option value="press">新闻</option>
+                            <option value="sharecapital">股本申报表</option>
+                            <option value="announcement">公告</option>
+                            <option value="circular">通函</option>
+                        </select>
+                    </li>
+                    <li>&nbsp;</li>
+                    <li>字段:</li>
+                 
+                    <li>
+                        <select name="searchField" >
+                            <option value="title">中文标题</option>
+                            <option value="title_en">英文标题</option>
+                            <option value="id">ID</option>
+                        </select>
+                    </li>
+                    <li>&nbsp;</li>
+                    <li>关键字:</li>
+                    <li><input type="text" name="keyword" id="keyword" value="请输入关键字" size="50" /></li>
+                    <li>&nbsp;</li>
+                    <li><input type="submit" value="开始搜索" /></li>
+                </ul>
+           </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#keyword").focus(function(){
+               if($(this).val() == '请输入关键字'){
+                $(this).val('');
+               }
+            });
+
+            $("#keyword").blur(function(){
+                 if($(this).val() == ''){
+                    $(this).val('请输入关键字');
+               }
+            });
+            
+            $("#search").submit(function(){
+                var key = $("#keyword").val();
+                if(!key || key == '请输入关键字'){
+                   
+                    return false;
+                }
+            });
+            // 提交表单时验证是否填写搜索关键字
+            
+
+        });
+    </script>
+</body>
+
+</html>

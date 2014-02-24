@@ -1,0 +1,107 @@
+	<load file="__PUBLIC__/header.html"/>
+	
+		<!-- 內頁導航圖區 S -->
+		<div class="innerImg">
+			<if value="L('_LANG_') eq 'en'">
+				
+					<img src="__PUBLIC__/images/hxyw-e.jpg" width="1000" height="135" alt="">
+				<else/>
+				
+					<img src="__PUBLIC__/images/hxyw.jpg" width="1000" height="135" alt="">
+			</if>
+
+			<ul class="secNav">
+					<li ><a  href='__CONTROL__' >ISD</a>
+					
+					</li>
+					<li ><a href='__CONTROL__/issivas'>ISS-iVAS</a></li>
+					<li class="secOn"><a href='__CONTROL__/issisd'>{$hd.language._ISS_ISD_}</a></li>
+			</ul>
+			
+			
+		</div>
+		<!-- 內頁導航圖區 E -->
+		
+		<div class="blank12"></div>
+		<!-- 内页content S -->
+		<div class="innerContent">
+			<!-- left S -->
+			<div class="innerLeft">
+				<div class="contents fullLeft">
+
+				<if value="L('_LANG_') eq 'en'">
+					<div id="thirContent">
+							<!-- iss 智能安防設備 英文S -->
+								<div id="thirWinBox">
+							<!-- 系統簡介 -->
+							<div class="whw1"><a href="javascript:change_page('intro','iss-isd');"><img src="__PUBLIC__/images/business/third/hardware/xt-e.jpg" alt=""></a></div>
+							<!-- 推薦產品 -->
+							<div class="whw2"><a href="javascript:change_page('pros','iss-isd');"><img src="__PUBLIC__/images/business/third/hardware/tjcp-e.jpg" alt=""></a></div>
+							<!-- 產品查詢 -->
+							<div class="whw3"><a href="http://www.cctvhw.com/cn/product.php" target="_blank"><img src="__PUBLIC__/images/business/third/hardware/cx-e.jpg" alt=""></a></div>
+							
+						</div>
+							<!-- iss 智能安防設備 英文E -->
+					</div>
+				<else/>
+					<div id="thirContent">
+
+					<!-- iss-isd 中文S -->
+						<div id="thirWinBox">
+							<!-- 系統簡介 -->
+							<div class="whw1"><a href="javascript:change_page('intro','iss-isd');"><img src="__PUBLIC__/images/business/third/hardware/xt.jpg" alt=""></a></div>
+							<!-- 推薦產品 -->
+							<div class="whw2"><a href="javascript:change_page('pros','iss-isd');"><img src="__PUBLIC__/images/business/third/hardware/tjcp.jpg" alt=""></a></div>
+							<!-- 產品查詢 -->
+							<div class="whw3"><a href="http://www.cctvhw.com/cn/product.php" target="_blank"><img src="__PUBLIC__/images/business/third/hardware/cx.jpg" alt=""></a></div>
+							
+						</div>
+					<!-- iss-isd 中文E -->
+					</div>
+				</if>
+
+					
+
+
+
+
+				</div>
+			
+			</div>
+			<!-- left E -->
+			<!-- right S -->
+			<div class="innerRight">
+				<!-- rightbox S -->
+				<!-- 内页公告通函展示 -->
+				<div class="rightbox">
+					<load file="__PUBLIC__/annCirs.html"/>
+					<!-- <h4>{$hd.language._ANN_AND_CIR_}</h4>
+					<ul id="annCirs">
+					
+					</ul> -->
+				</div>
+				<!-- rightbox E -->
+				<!-- 内页年报展示 -->
+				<div class="rightbox rightbox1">
+					<load file="__PUBLIC__/IAReport.html"/>
+					<!-- <h4>{$hd.language._IREPORT_AREPORT_}</h4>
+					<ul id="IAReport">
+					
+					</ul> -->
+				</div>
+				<div class="rightbox2">
+					<!-- 豪威图片介绍 -->
+						<load file="__PUBLIC__/hw.html"/>
+					
+					
+				</div>
+
+			</div>
+			<!-- right E -->
+		</div>
+		<!-- 内页content E -->
+	</div>
+	<!-- 页面容器 E -->
+	<load file="__PUBLIC__/footer.html"/>
+	
+	

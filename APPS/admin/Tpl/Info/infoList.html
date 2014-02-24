@@ -1,0 +1,75 @@
+<load file="__PUBLIC__/header.html"/>
+
+<!-- 文章信息列表 -->
+<!-- 頭部選項區S -->
+<ul class="top_title">
+    <li>
+        <p class="menu_title">文章分类</p>
+    </li>
+   
+    <li>
+        <a href="__CONTROL__/addList" class="menu_title_a" >
+            <i class="icon icon-plus-sign"></i>&nbsp;添加分类
+        </a>
+    </li>
+    
+    
+    
+  
+</ul>
+<!-- 頭部選項區E -->
+<!-- 列表展示區S -->
+<table class="table">
+        <thead>
+            <tr class="top_channel">
+                <th width="30"></th>
+                <th align="center" width="50">ID</th>
+                <th width='20'></th>
+                <th align="center" width="250">分类名称</th>
+                <th align='center' width='88'>所属分类</th>
+                
+                <th align='center' width='130'>是否使用</th>
+                <th align="center">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <foreach from="$list" value="$v">
+                <tr class="tr_td path_{$v.ipath} pid_{$v.pid}" cid="{$v.id}" path="{$v.ipath}">
+                    <td ><span class="showSpan">+</span></td>
+                    <td>{$v.id}</td>
+                    <td></td>
+                    <td style="text-align:left;">|{$v.html}{$v.name}</td>
+                    <td>{$v.type}</td>
+                    <td>
+                        <if value="$v.isshow == 1">
+                            显示
+                            <else/>
+                            隐藏
+                        </if>
+                    </td>
+                    <td>
+                        <a href="__CONTROL__/editList/id/{$v.id}">编辑</a>
+                        |
+                        <a href="javascript:delConfirm({$v.id});">删除</a>
+                    </td>
+                </tr>
+
+            </foreach>
+	      	
+	  
+
+       
+
+            <tr class="tr_td">
+             
+                <td align="center">
+                    
+                </td>
+                <td colspan="5">{$page} </td>
+            </tr>
+        </tbody>
+    </table>
+<!-- 列表展示區E -->
+
+</body>
+</html>

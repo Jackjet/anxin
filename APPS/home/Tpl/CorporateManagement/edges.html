@@ -1,0 +1,111 @@
+	<load file="__PUBLIC__/header.html"/>
+
+		<!-- 內頁導航圖區 S -->
+		<div class="innerImg">
+			<if value="L('_LANG_') eq 'en'">
+				
+					<img src="__PUBLIC__/images/qygz-e.jpg" width="1000" height="135" alt="">
+				<else/>
+				
+					<img src="__PUBLIC__/images/qygz.jpg" width="1000" height="135" alt="">
+			</if>
+
+			<ul class="secNav">
+					<li ><a  href='__APP__/CorporateManagement' >{$hd.language._COR_MANAGEMENT_}</a>
+					
+					</li>
+					<li ><a href='__APP__/CorporateManagement/layers'>{$hd.language._MANAGEMENT_LAYERS_}</a></li>
+					<li ><a href='__APP__/CorporateManagement/awards'>{$hd.language._ACC_REWARDS_}</a></li>
+					<li class="secOn"><a href='__APP__/CorporateManagement/edges'>{$hd.language._COM_EDGES_}</a></li>
+			</ul>
+			
+			
+		</div>
+		<!-- 內頁導航圖區 E -->
+		<!-- 三級菜單 S -->
+		<!-- <div class="thirNav">
+			<p><a href="">aaa</a>&nbsp;&nbsp;<a href="">bbb</a></p>
+		</div> -->
+		<!-- 三級菜單 E -->
+		<div class="blank12"></div>
+		<!-- 内页content S -->
+		<div class="innerContent">
+			<!-- left S -->
+			<div class="innerLeft">
+				<div class="contents">
+
+				<if value="L('_LANG_') eq 'en'">
+					<!-- 竞争优势 英文S -->
+						<p>We always follow governmental strategies firmly.</p>
+				
+						<p>In the twelfth Five-Year plan, the central government emphasizes the fierce determination to strengthen safety production surveillance administration and to improve emergency rescue ability.</p>
+				
+						<p>“State Administration of Work Safety aims at accomplishing the monitoring center networking project of provincial and municipal large & medium size enterprises as of December 31th, 2015, ”stressed the No.114 Document which was released by State Administration of Work Safety in September, 2012.</p>
+						
+						<p>China’s current macro-policy environment is largely profitable for the development of this group’s both ISD and ISS businesses. With governmental guidance about promoting industrial safety production and public safety industries, Anxin-China will certainly take supports from numerous partners and stockholders, as well as other social opportunities, to develop its ISD system constantly in China’s security and environmental surveillance industries. In addition, this group will also take effective measures to implement the revolutionary technological reformation in social safety and security areas, with an aim at bringing ISS business into a broader market.</p>
+
+						<p>Anxin-China always responds to governmental orders timely, and focuses on building the leading corporation in China’s security industry with the principle that your safety is our business.</p>
+					<!-- 竞争优势 英文E -->
+				<else/>
+					<!-- 競爭優勢S -->
+						<p>我们紧跟国家战略步伐</p>
+				
+						<p>在「十二五」规划中，中央政府重申加强安全生产监管及提高应急救援能力的决心。</p>
+				
+						<p>国家安全生产监督管理总局（「安监总局」）在二零一二年九月发布的「一一四」号文件也强调，到二零一五年年底，安监总局的目标是完成全国省、市级大中型企业的监控联网工作。</p>
+						
+						<p>中国目前的宏观政策环境十分有利于本集团ISD业务及ISS业务的发展。在政府对工业安全生产的决心和积极发展公共安全产业政策的指导下，在众多伙伴和股东的支持下，中国安芯将抓住工业安全生产、公共安全和环保监测建设所带来的发展机遇，继续成为ISD系统行业的龙头企业，并同时引领安全领域进行革命性的技术改革，向拥有更广大市场空间的ISS业务发展。</p>
+
+						<p>响应国家号召，专注中国安防，中国安芯一直在努力。</p>
+
+				
+
+					<!-- 競爭優勢E -->
+					
+				</if>
+
+					
+
+
+
+
+				</div>
+			
+			</div>
+			<!-- left E -->
+			<!-- right S -->
+			<div class="innerRight">
+				<!-- rightbox S -->
+				<!-- 内页公告通函展示 -->
+				<div class="rightbox">
+					<load file="__PUBLIC__/annCirs.html"/>
+					<!-- <h4>{$hd.language._ANN_AND_CIR_}</h4>
+					<ul id="annCirs">
+					
+					</ul> -->
+				</div>
+				<!-- rightbox E -->
+				<!-- 内页年报展示 -->
+				<div class="rightbox rightbox1">
+					<load file="__PUBLIC__/IAReport.html"/>
+					<!-- <h4>{$hd.language._IREPORT_AREPORT_}</h4>
+					<ul id="IAReport">
+					
+					</ul> -->
+				</div>
+				<div class="rightbox2">
+					<!-- 豪威图片介绍 -->
+						<load file="__PUBLIC__/hw.html"/>
+					
+					
+				</div>
+
+			</div>
+			<!-- right E -->
+		</div>
+		<!-- 内页content E -->
+	</div>
+	<!-- 页面容器 E -->
+	<load file="__PUBLIC__/footer.html"/>
+	
+	

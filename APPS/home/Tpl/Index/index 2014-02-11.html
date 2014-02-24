@@ -1,0 +1,340 @@
+	
+	<load file="__PUBLIC__/header.html"/>
+	
+
+	<!-- ----------------------------------------------------------------- -->
+		<!-- ads图片 S -->
+		<div class="adimg">
+			<ul>
+				<if value="$hd.language._LANG_ eq 'en'">
+					<li>
+						<img src="__PUBLIC__/images/shipin-e.jpg" width="1000" height="290" alt=""/>
+					</li>
+					<li>
+						<img src="__PUBLIC__/images/anfang-e.jpg" width="1000" height="290" alt=""/>
+					</li>
+				
+				<else/>
+					<li>
+						<!-- <img src="__PUBLIC__/images/shipin.jpg" width="1000" height="290" alt=""/> -->
+						<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="1000" height="290">
+					      <param name="movie" value="__PUBLIC__/media/ivas.swf" />
+					      <param name="quality" value="high" />
+					      <param name="wmode" value="transparent" />
+					      <param name="BGCOLOR" value="#000000" />
+					      <embed src="__PUBLIC__/media/ivas.swf" width="1000" height="290" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent" bgcolor="#000000"></embed>
+					    </object>	
+
+					</li>
+					<li>
+						<img src="__PUBLIC__/images/anfang.jpg" width="1000" height="290" alt=""/>
+					</li>
+				</if>
+			</ul>
+			
+		</div>
+		<!-- ads图片 E -->
+		<div class="blank1"></div>
+		<div class="advideoimg">
+			<!-- 视频 S-->
+			<div class="video1">
+					<!-- START OF THE PLAYER EMBEDDING TO COPY-PASTE -->
+					 <div id="mediaplayer"></div>
+					<if value="$hd.language._LANG_ eq 'en'">
+						
+						<script type="text/javascript" src="__PUBLIC__/media/jwplayer.js"></script>
+                            <script type="text/javascript">
+                                jwplayer("mediaplayer").setup({
+                                    flashplayer: "__PUBLIC__/media/player.swf",
+                                    file: "__PUBLIC__/data/anxin_2013_en.flv",
+                                    width: 332,
+                                    height: 176,
+									autostart:true,
+                                    image: "__PUBLIC__/images/ivas_2013.jpg"
+                                });
+                            </script>
+
+						
+					<else/>
+				
+						<script type="text/javascript" src="__PUBLIC__/media/jwplayer.js"></script>
+                            <script type="text/javascript">
+                                jwplayer("mediaplayer").setup({
+                                    flashplayer: "__PUBLIC__/media/player.swf",
+                                    file: "__PUBLIC__/data/anxin_2013.flv",
+                                    width: 332,
+                                    height: 176,
+									autostart:true,
+                                    image: "__PUBLIC__/images/ivas_2013.jpg"
+                                });
+                            </script>
+					</if>
+		
+					<!-- END OF THE PLAYER EMBEDDING -->
+			</div>
+			<!-- 视频 E-->
+			<!-- isd ivas鏈接圖S -->
+				<if value="$hd.language._LANG_ eq 'en'">
+					<div class="adimg1"><a href="__APP__/CoreBusiness" ><img src="__PUBLIC__/images/isd-e.jpg" width="332" height="176" alt=""></a></div>
+					<div class="adimg2"><a href="__APP__/CoreBusiness/issivas"><img src="__PUBLIC__/images/iss-e.jpg" width="332" height="176" alt=""></a></div>
+				<else/>
+					<div class="adimg1"><a href="__APP__/CoreBusiness"><img src="__PUBLIC__/images/isd.jpg" width="332" height="176" alt=""></a></div>
+					<div class="adimg2"><a href="__APP__/CoreBusiness/issivas"><img src="__PUBLIC__/images/iss.jpg" width="332" height="176" alt=""></a></div>
+				</if>
+			<!-- isd ivas鏈接圖E -->
+
+		</div>
+		<div class="blank1"></div>
+		<!-- 主要内容信息 S -->
+		<div class="contentbox">
+			<!-- 主要内容左 S -->
+			<div class="contentboxLeft">
+				<!-- 股票信息 -->
+				<div class="leftBox1">
+					<div class="leftbox1r">
+						<p style="color:#9b2322;color:#fff;">{$hd.language._HKEX_NO_}</p>
+						<p style="color:#fff;font-size:16px;line-height:30px;">01149.HK</p>
+					</div>
+					<div class="nowprice"><em id="nowPrice"></em> <span>{$hd.language._HK_DOLLAR_}</span></div>
+
+				</div>
+				<div class="leftBox2">
+					<ul>
+						<li>{$hd.language._OPEN_PRICE_TODAY_}：<span id="openPrice"></span></li>
+						<li>{$hd.language._CLOSE_PRICE_Y_}：<span id="closePriceY"></span></li>
+						<li>{$hd.language._HIGHEST_PRICE_}：<span id="hightPrice"></span></li>
+						<li>{$hd.language._LOWEST_PRICE_}：<span id="lowestPrice"></span></li>
+
+					</ul>
+				</div>
+				<div class="leftBox3">
+					<p>{$hd.language._UPDATE_TIME_} <span id="updateTime"></span>&nbsp;
+						<if value="L('_LANG_') == 'en'">
+								<a href="__PUBLIC__/data/disclaimer_en.html" target="_blank">Disclaimer</a>
+							<else/>
+								<a href="__PUBLIC__/data/disclaimer.html" target="_blank">免責聲明</a>
+						</if>
+
+					</p>
+
+				</div>
+				<div class="leftBox4"><span><a href="">{$hd.language._POWERPOINT_}</a></span><h2><a href="__APP__/InvestorRelations/reports">{$hd.language._IREPORT_AREPORT_}</a></h2></div>
+
+				<div class="leftBox5">
+					<ul class="nianbao">
+						<!-- 年报S -->
+						<if value="L('_LANG_') eq 'en'">
+							<!-- 年报英文S -->
+							
+							<if value="$report.iryear gt $report.aryear">
+								<!-- 中期报告 -->
+								<li>
+									<p><a href="__ROOT__/Public/reports/en/{$report.i_url_en}" target="_blank">{$hd.language._I_REPORT_} {$report.iryear}</a></p>
+									<div><a href="__ROOT__/Public/reports/en/{$report.i_url_en}" target="_blank"><img src="__ROOT__/Public/reports/images/{$report.i_img_en}" width="100" height="135" alt=""/></a></div>
+								</li>
+						
+								<!-- 年报 -->
+								<li>
+								<p><a href="__ROOT__/Public/reports/en/{$report.a_url_en}" target="_blank">{$hd.language._A_REPORT_}{$report.aryear}</a></p>
+								<div><a href="__ROOT__/Public/reports/en/{$report.a_url_en}" target="_blank"><img src="__ROOT__/Public/reports/images/{$report.a_img_en}" width="100" height="135" alt=""/></a></div>
+								</li>
+							
+							
+							<else/>
+								<!-- 年报 -->
+								<li>
+								<p><a href="__ROOT__/Public/reports/en/{$report.a_url_en}" target="_blank">{$hd.language._A_REPORT_}{$report.aryear}</a></p>
+								<div><a href="__ROOT__/Public/reports/en/{$report.a_url_en}" target="_blank"><img src="__ROOT__/Public/reports/images/{$report.a_img_en}" width="100" height="135" alt=""/></a></div>
+								</li>
+								<!-- 中期报告 -->
+								<li>
+									<p><a href="__ROOT__/Public/reports/en/{$report.i_url_en}" target="_blank">{$hd.language._I_REPORT_} {$report.iryear}</a></p>
+									<div><a href="__ROOT__/Public/reports/en/{$report.i_url_en}" target="_blank"><img src="__ROOT__/Public/reports/images/{$report.i_img_en}" width="100" height="135" alt=""/></a></div>
+								</li>
+								
+							</if>
+							<!-- 年报英文E -->
+						<else/>
+						<!-- 年报中文S -->
+							<if value="$report.iryear gt $report.aryear">
+								<!-- 中期报告 -->
+								<li>
+									<p><a href="__ROOT__/Public/reports/zh/{$report.i_url}" target="_blank">{$hd.language._I_REPORT_} {$report.iryear}</a></p>
+									<div><a href="__ROOT__/Public/reports/zh/{$report.i_url}" target="_blank"><img src="__ROOT__/Public/reports/images/{$report.i_img}" width="100" height="135" alt=""/></a></div>
+								</li>
+								<!-- 年报 -->
+								<li>
+								<p><a href="__ROOT__/Public/reports/zh/{$report.a_url}" target="_blank">{$hd.language._A_REPORT_}{$report.aryear}</a></p>
+								<div><a href="__ROOT__/Public/reports/zh/{$report.a_url}" target="_blank"><img src="__ROOT__/Public/reports/images/{$report.a_img}" width="100" height="135" alt=""/></a></div>
+								</li>
+								
+							<else/>
+								<!-- 年报 -->
+								<li>
+								<p><a href="__ROOT__/Public/reports/zh/{$report.a_url}" target="_blank">{$hd.language._A_REPORT_}{$report.aryear}</a></p>
+								<div><a href="__ROOT__/Public/reports/zh/{$report.a_url}" target="_blank"><img src="__ROOT__/Public/reports/images/{$report.a_img}" width="100" height="135" alt=""/></a></div>
+								</li>
+								<!-- 中期报告 -->
+								<li>
+									<p><a href="__ROOT__/Public/reports/zh/{$report.i_url}" target="_blank">{$hd.language._I_REPORT_} {$report.iryear}</a></p>
+									<div><a href="__ROOT__/Public/reports/zh/{$report.i_url}" target="_blank"><img src="__ROOT__/Public/reports/images/{$report.i_img}" width="100" height="135" alt=""/></a></div>
+								</li>
+							</if>
+						<!-- 年报中文E -->
+							
+						</if>
+						<!-- 年报E -->
+						
+					</ul>
+					
+				</div>
+				
+				
+			</div>
+			<!-- 主要内容左 E -->
+
+			<div class="contentboxRight">
+				<div class="rightBox1">
+					<h1><a href="__APP__/Media">{$hd.language._COMPANY_NEWS_}</a></h1>
+				</div>
+				<div class="rightBox2">
+					<!-- 公司新闻内容S -->
+					<div class="medias1">
+						<!-- 新闻封面图片S -->
+						<if value="L('_LANG_') eq 'en'">
+							<a href="__ROOT__/Public/press/en/{$news_one.file_url_en}" target="_blank" title="{$news_one.title_en}"><img src="__ROOT__/Public/press/images/{$news_one.pic_url}" width="210" height="140" alt=""></a>
+						<else/>
+							<a href="__ROOT__/Public/press/zh/{$news_one.file_url}" target="_blank" title="{$news_one.title}"><img src="__ROOT__/Public/press/images/{$news_one.pic_url}" width="210" height="140" alt=""></a>
+						</if>
+						<!-- 新闻封面图片E -->
+
+						<!-- 封面新闻S -->
+						<if value="L('_LANG_') eq 'en'">
+							<div class="medias_one">
+								<h3><a href="__ROOT__/Public/press/en/{$news_one.file_url_en}" target="_blank" title="{$news_one.title_en}">{$news_one.title_en|strtoupper}</a></h3>
+								<p>{$news_one.des_en|ucfirst|showShort:	200}</p>
+							</div>
+						<else/>
+							<div class="medias_one">
+								<h3><a href="__ROOT__/Public/press/zh/{$news_one.file_url}" target="_blank" title="{$news_one.title}">{$news_one.title}</a></h3>
+								<p>{$news_one.des|showShort:200}</p>
+							</div>
+						</if>
+
+						<!-- 封面新闻E -->
+						
+
+
+					</div>
+					<div class="hr1"></div>
+				
+					<div class="medias2">
+
+						<ul>
+							<if value="L('_LANG_') eq 'en'">
+								<foreach from="$newsList" value='$vo'>
+
+									<if value="$vo.url">
+										<li><span>{$vo.create_time|strtotime|date:'d M Y',@@}</span><a href="{$vo.url}" target="_blank" title="{$vo.title_en|strtoupper}">{$vo.title_en|strtoupper|showShort:60}</a></li>
+									<else/>
+										<li><span>{$vo.create_time|strtotime|date:'d M Y',@@}</span><a href="__ROOT__/Public/press/en/{$vo.file_url_en}" target="_blank" title="{$vo.title_en|strtoupper}">{$vo.title_en|strtoupper|showShort:60}</a></li>
+									</if>
+								
+								
+								</foreach>
+							<else/>
+								<foreach from="$newsList" value='$vo'>
+									
+									<if value="$vo.url">
+										<li><span>{$vo.create_time|strtotime|date:'Y年m月d日',@@}</span><a href="{$vo.url}" target="_blank" title="{$vo.title}">{$vo.title|showShort:80}</a></li>
+									<else/>
+										<li><span>{$vo.create_time|strtotime|date:'Y年m月d日',@@}</span><a href="__ROOT__/Public/press/zh/{$vo.file_url}" target="_blank" title="{$vo.title}">{$vo.title|showShort:80}</a></li>
+									</if>
+
+								
+								
+								</foreach>
+							</if>
+							
+							<!-- <li><span>2013年12月12日</span><a href="">貴州省納雍縣羅縣長一行在中國安芯</a></li>
+							<li><span>2013年12月12日</span><a href="">貴州省納雍縣羅縣長一行在中國安芯</a></li>
+							<li><span>2013年12月12日</span><a href="">貴州省納雍縣羅縣長一行在中國安芯</a></li> -->
+						</ul>
+					</div>
+					<!-- 公司新闻内容E -->
+				</div>
+					<!-- 公告通函 -->
+				<div class="rightBox3"><h1><a class="a_on" href="__APP__/InvestorRelations/announcements">{$hd.language._ANNOUNCEMENT_}</a><a href="__APP__/InvestorRelations/circulars">{$hd.language._CIRCULAR}</a>
+				<a href="__APP__/InvestorRelations/sharecapital">{$hd.language._GBSB_}</a></h1></div>
+				<div class="rightBox4">
+					<ul>
+
+						<if value="L('_LANG_') eq 'en'">
+							
+								<foreach from="$ann" value='$vo'>
+								<li><span>{$vo.create_time|strtotime|date:'d M Y',@@}</span><a href="__ROOT__/Public/announcements/en/{$vo.file_url_en}" target="_blank" title="{$vo.title_en|strtoupper}">{$vo.title_en|strtoupper|showShort:60}</a></li>
+								
+								</foreach>
+								
+
+							<else/>
+								
+								<foreach from="$ann" value='$vo'>
+								<li><span>{$vo.create_time|strtotime|date:'Y年m月d日',@@}</span><a href="__ROOT__/Public/announcements/zh/{$vo.file_url}" target="_blank" title="{$vo.title}">{$vo.title|showShort:80}</a></li>
+								
+								</foreach>
+								
+						</if>
+					<!-- 公告E -->
+						
+					</ul>
+					<ul style="display:none;">
+						<if value="L('_LANG_') eq 'en'">
+							
+								
+								<foreach from="$cir" value='$vo'>
+								<li><span>{$vo.create_time|strtotime|date:'d M Y',@@}</span><a href="__ROOT__/Public/circulars/en/{$vo.file_url_en}" target="_blank" title="{$vo.title_en|strtoupper}">{$vo.title_en|strtoupper|showShort:60}</a></li>
+								
+								</foreach>
+
+							<else/>
+								
+								
+								<foreach from="$cir" value='$vo'>
+								<li><span>{$vo.create_time|strtotime|date:'Y年m月d日',@@}</span><a href="__ROOT__/Public/circulars/zh/{$vo.file_url}" target="_blank" title="{$vo.title}">{$vo.title|showShort:80}</a></li>
+								
+								</foreach>
+						</if>
+						<!-- 通函 -->
+					</ul>
+					<ul style="display:none;">
+						<if value="L('_LANG_') eq 'en'">
+							
+								
+								<foreach from="$share" value='$vo'>
+								<li><span>{$vo.create_time|strtotime|date:'d M Y',@@}</span><a href="__ROOT__/Public/announcements/en/{$vo.file_url_en}" target="_blank" title="{$vo.title_en|strtoupper}">{$vo.title_en|strtoupper|showShort:60}</a></li>
+								
+								</foreach>
+
+							<else/>
+								
+								
+								<foreach from="$share" value='$vo'>
+								<li><span>{$vo.create_time|strtotime|date:'Y年m月d日',@@}</span><a href="__ROOT__/Public/announcements/zh/{$vo.file_url}" target="_blank" title="{$vo.title}">{$vo.title|showShort:80}</a></li>
+								
+								</foreach>
+						</if>
+						<!-- 股本申报表 -->
+					</ul>
+				</div>
+				
+			</div>
+
+		</div>
+		<!-- 主要内容信息 E -->
+
+	</div>
+	<!-- 页面容器 E -->
+	
+	<!-- 页脚 -->
+	<load file="__PUBLIC__/footer.html"/>

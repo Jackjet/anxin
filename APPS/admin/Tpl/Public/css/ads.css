@@ -1,0 +1,10 @@
+.validateTips { border: 1px solid transparent; padding: 0.3em; }
+#ads-dialog-form p{margin: 0 0 14px 0;  width: 100%; text-align: left;}
+#ads-dialog-form label {
+	float:left;
+	width:60px;
+	margin: 8px 5px 0 0;
+	line-height: 12px;
+	text-align: right;
+}
+#ads-dialog-form .text {text-align: left;}

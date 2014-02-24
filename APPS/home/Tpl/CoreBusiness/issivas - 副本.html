@@ -1,0 +1,119 @@
+	<load file="__PUBLIC__/header.html"/>
+	<js file="__PUBLIC__/js/press_news.js"/>
+		<!-- 內頁導航圖區 S -->
+		<div class="innerImg">
+			<if value="L('_LANG_') eq 'en-us'">
+				
+					<img src="__PUBLIC__/images/hxyw.jpg" width="1000" height="135" alt="">
+				<else/>
+				
+					<img src="__PUBLIC__/images/hxyw.jpg" width="1000" height="135" alt="">
+			</if>
+
+			<ul class="secNav">
+					<li ><a  href='__CONTROL__' >ISD</a>
+					
+					</li>
+					<li class="secOn"><a href='__CONTROL__/issivas'>ISS-iVAS</a></li>
+					<li ><a href='__CONTROL__/issisd'>{$hd.language._ISS_ISD_}</a></li>
+			</ul>
+			
+			
+		</div>
+		<!-- 內頁導航圖區 E -->
+		<!-- 三級菜單 S -->
+		<div id="thirNav">
+			<ul>
+				<li class="on" onclick="change_page('intro','iss-ivas');">{$hd.language._SYS_INTRO_}</li>
+				<li  onclick="change_page('feature','iss-ivas');">{$hd.language._SYS_FEATURE_}</li>
+				<li onclick="change_page('rule','iss-ivas');">{$hd.language._RULE_INTRO_}</li>
+				<li onclick="change_page('apparea','iss-ivas');">{$hd.language._APP_AREA_}</li>
+				<li onclick="change_page('success','iss-ivas');">{$hd.language._SUC_CASE_}</li>
+			
+
+			</ul>
+			<!-- <ul><li href="" >aaa</li>&nbsp;&nbsp;<li href="" class="on">bbb</li><li href="" >ccc</li></ul> -->
+		</div>
+		<!-- 三級菜單 E -->
+		<div class="blank12"></div>
+		<!-- 内页content S -->
+		<div class="innerContent">
+			<!-- left S -->
+			<div class="innerLeft">
+				<div class="contents">
+
+				<if value="L('_LANG_') eq 'en'">
+					<div id="thirContent">
+
+					<!-- issivas 英文S -->
+						<p>Intelligent Safety System, namely ISS system, is a powerful security system consisting of intelligent analysis technology and smart security device. It filters the invalid information intelligently, so that personnel can receive the significant information. Thus, ISS system can predict the safety hazards in advance and largely promote the working efficiency of security personnel, to keep the target job safe. 
+						</p>
+						<img src="" alt="">
+						<p>iVAS, a particular advanced video analysis system detecting both individuals and objects in the video images in real time, is newly developed on the basis of Israeli advanced technology which Anxin-China acquired from Mate, an Israeli company, in 2012.iVAS analyzes all surveillance images,–only records related videos and sends alerts as soon as any individuals or objects violate a preset rule in video images.Such an improved system changes the traditional video-checking model into a real-time 24/7 surveillance model, or in another saying, it combines the pre-incident alerting, mid-incident treatmentand post-incident conclusion altogether in order to realize the complete surveillance process, presenting the safe defense more than a passive process. 
+
+						</p>
+						
+						<img src="" alt="">
+					<!-- issivas 英文E -->
+					</div>
+				<else/>
+					<div id="thirContent">
+					<!-- issivas 中文S -->
+						<p>智慧安全系統（Intelligent Safety System，簡稱ISS系統），ISS系統是由智慧分析技術與智慧安防設備組成的功能強大的安全系統。ISS系統將無效的資訊進行智慧過濾，只將有意義的資訊提供給工作人員。從而極大的提高安全系統的工作效率。ISS系統提前預測安全隱患，對其有效控制以保障安全。
+						</p>
+						<img src="" alt="">
+						<p>ISS擁有國際尖端的智慧系統——智慧視頻分析系統（Intelligent Video Analysis System，簡稱iVAS系統）。iVAS系統是中國安芯控股有限公司收購以色列企業,Mate Intelligent Video後，對其視頻分析技術進行升級與應用，開發出專門針對人與物體相關行為進行即時偵測、動態跟蹤的視頻分析系統。一改傳統監控系統現場查看與事後查證相結合的模式，升級為系統全天候監控模式，將“事先預警、事中處理、事後取證”相結合，事先“全過程監控”，真正起到“安全防範”的作用。 
+						</p>
+						
+						<img src="" alt="">
+
+
+					<!-- isd 中文E -->
+					</div>
+				</if>
+
+					
+
+
+
+
+				</div>
+			
+			</div>
+			<!-- left E -->
+			<!-- right S -->
+			<div class="innerRight">
+				<!-- rightbox S -->
+				<!-- 内页公告通函展示 -->
+				<div class="rightbox">
+					<h4>{$hd.language._ANN_AND_CIR_}</h4>
+					<ul id="annCirs">
+					
+					</ul>
+				</div>
+				<!-- rightbox E -->
+				<!-- 内页年报展示 -->
+				<div class="rightbox rightbox1">
+					<h4>{$hd.language._IREPORT_AREPORT_}</h4>
+					<ul id="IAReport">
+						<!-- <li style="width:100px;"><p><a href="">年度报告</a></p><a href=""><img src="__PUBLIC__/home/images/nb1.jpg" width="100" height="135" alt=""></a></li>
+						<li style="width:100px;"><p><a href="">年度报告</a></p><a href=""><img src="__PUBLIC__/home/images/nb1.jpg" width="100" height="135" alt=""></a></li>
+						 -->
+					</ul>
+				</div>
+				<div class="rightbox2">
+					<!-- 豪威图片介绍 -->
+						<load file="__PUBLIC__/hw.html"/>
+					
+					
+				</div>
+
+			</div>
+			<!-- right E -->
+		</div>
+		<!-- 内页content E -->
+	</div>
+	<!-- 页面容器 E -->
+	<load file="__PUBLIC__/footer.html"/>
+	
+	

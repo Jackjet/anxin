@@ -1,0 +1,165 @@
+	<load file="__PUBLIC__/header.html"/>
+	<js file="__PUBLIC__/js/awards.js"/>
+	
+
+		<!-- 內頁導航圖區 S -->
+		<div class="innerImg">
+			<if value="L('_LANG_') eq 'en'">
+				
+					<img src="__PUBLIC__/images/qygz-e.jpg" width="1000" height="135" alt="">
+				<else/>
+				
+					<img src="__PUBLIC__/images/qygz.jpg" width="1000" height="135" alt="">
+			</if>
+
+			<ul class="secNav">
+					<li ><a  href='__APP__/CorporateManagement' >{$hd.language._COR_MANAGEMENT_}</a>
+					
+					</li>
+					<li ><a href='__APP__/CorporateManagement/layers'>{$hd.language._MANAGEMENT_LAYERS_}</a></li>
+					<li class="secOn"><a href='__APP__/CorporateManagement/awards'>{$hd.language._ACC_REWARDS_}</a></li>
+					<li ><a href='__APP__/CorporateManagement/edges'>{$hd.language._COM_EDGES_}</a></li>
+			</ul>
+			
+			
+		</div>
+		<!-- 內頁導航圖區 E -->
+		<!-- 三級菜單 S -->
+		<!-- <div class="thirNav">
+			<p><a href="">aaa</a>&nbsp;&nbsp;<a href="">bbb</a></p>
+		</div> -->
+		<!-- 三級菜單 E -->
+		<div class="blank12"></div>
+		<!-- 内页content S -->
+		<div class="innerContent">
+			<!-- left S -->
+			<div class="innerLeft">
+				<div class="contents">
+
+				<if value="L('_LANG_') eq 'en'">
+					<!-- 嘉許 & 獎項英文 S-->
+						<p>Despite of being approved by ISO9001:2008 quality control system standard, Anxin-China has successfully applied for and been issued nearly one hundred patents and copyrights.</p>
+						  <div class="atselect">
+			                  Show type
+			                  <select name="atype">
+			                    <option value="0">All</option>
+			                    <option value="1">Reward</option>
+			                    <option value="2">Copyright</option>
+			                    <option value="3">Patent</option>
+			                    <option value="4">Accolade</option>
+			                    <option value="5">Other achievements</option>
+
+
+			                  </select>
+		                </div>
+
+                <div class="blank"></div>
+                 <div class="awardshowbox">
+                  
+                        <ul>
+		                   <foreach from='$list' value="$v">
+
+		                        <li>
+		                          <div class="aimg">
+
+		                            <a href="__ROOT__/Public/{$v.pic_url}" target="_blank"><img src="__ROOT__/Public/{$v.pic_url_thumb}" width="150" height="120" alt="{$v.title_en}"/></a>
+		                          </div>
+		                          
+		                          <p>{$v.title_en|showShort:22}</p>
+		                        </li>
+
+		                    </foreach>
+                      	</ul>
+
+
+                  
+                </div>
+
+                <div class="cpage">{$epage}</div>
+
+					<!-- 嘉許 & 獎項英文 E-->
+					
+				<else/>
+					<!-- 嘉許 & 獎項中文 S-->
+						<p>中國安芯已在中國申請並獲得了近百項專利和著作權，並已獲得ISO9001:2008品質管制體系標準認證。</p>
+
+						<div class="atselect">
+		                  显示分类
+		                  <select name="atype">
+		                    <option value="0">全部</option>
+		                    <option value="1">荣誉</option>
+		                    <option value="2">著作权</option>
+		                    <option value="3">专利</option>
+		                    <option value="4">资质</option>
+		                    <option value="5">其它成果</option>
+
+
+		                  </select>
+		                </div>
+                <div class="blank"></div>
+                <div class="awardshowbox">
+                  
+                        <ul>
+		                   <foreach from='$list' value="$v">
+
+		                        <li>
+		                          <div class="aimg">
+
+		                            <a href="__ROOT__/Public/{$v.pic_url}" target="_blank"><img src="__ROOT__/Public/{$v.pic_url_thumb}" width="150" height="120" alt="{$v.title}"/></a>
+		                          </div>
+		                          
+		                          <p>{$v.title|showShort:30}</p>
+		                        </li>
+
+		                    </foreach>
+                      	</ul>
+
+
+                  
+                </div>
+
+                <div class="cpage">{$page}</div>
+
+					<!-- 嘉許 & 獎項中文 E-->
+				</if>
+
+				</div>
+			
+			</div>
+			<!-- left E -->
+			<!-- right S -->
+			<div class="innerRight">
+				<!-- rightbox S -->
+				<!-- 内页公告通函展示 -->
+				<div class="rightbox">
+					<load file="__PUBLIC__/annCirs.html"/>
+					<!-- <h4>{$hd.language._ANN_AND_CIR_}</h4>
+					<ul id="annCirs">
+					
+					</ul> -->
+				</div>
+				<!-- rightbox E -->
+				<!-- 内页年报展示 -->
+				<div class="rightbox rightbox1">
+					<load file="__PUBLIC__/IAReport.html"/>
+					<!-- <h4>{$hd.language._IREPORT_AREPORT_}</h4>
+					<ul id="IAReport">
+					
+					</ul> -->
+				</div>
+				<div class="rightbox2">
+					<!-- 豪威图片介绍 -->
+						<load file="__PUBLIC__/hw.html"/>
+					
+					
+				</div>
+
+			</div>
+			<!-- right E -->
+		</div>
+		<!-- 内页content E -->
+	</div>
+	<!-- 页面容器 E -->
+	<load file="__PUBLIC__/footer.html"/>
+	
+	

@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" media="all" href="__PUBLIC__/css/notice.css" />
+<link rel="stylesheet" type="text/css" media="all" href="__PUBLIC__/css/jquery-ui.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-ui.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/js/report_update.js"></script>
+<title>修改年报-{$title}</title>
+</head>
+<body>
+<div>
+
+    <p><span style="color:#f80;">选择上传方式：</span>(直接上传为直接通过后台上传文件，ftp上传为通过ftp上传文件，再从后台保存文件名)</p>
+  <form action="__CONTROL__/update" method="POST" enctype="multipart/form-data" class="u_form">
+    <input type="hidden" name='id' value="{$report.id}"/>
+    <input type="radio" name="uptype" value='1' checked="checked"/>ftp上传直接上传&nbsp;&nbsp;&nbsp;<input type="radio" name="uptype" value='2' />直接上传
+                     <p></p>
+
+   <!-- 表单S -->
+          <p><label for="creat_time">创建时间</label> <input type="text" id="create_time" name="create_time" value="{|date('Y-m-d')}"/></p>
+                       
+                      <!-- 备用 上传文件名- 文件则通过ftp上传 -->
+                    <div class="up_ftp">
+                        <p style="color:red;font-size:14px;font-weight:bold;">通过地址上传,填写名称</p>
+                        <p style="color:#f60;">ftp上传地址为:根/Pulibc/reports/zh(中文)<br/>根/Pulibc/reports/en(英文)</p>
+                        <!-- 年报 -->
+                        <p><label for="notice">年报封面图片-中文</label> <input type="file" id="a_img_zh_ftp" name="a_img_zh_ftp" /></p>
+                        <p><label for="notice">年报封面图片-英文</label> <input type="file" id="a_img_en_ftp" name="a_img_en_ftp" /></p>
+
+                        <p><label for="notice">年报文档名称(中文)</label> <input type="text" id="a_name" name="a_name" value="{$report.a_url}"/></p>
+                        <p><label for="notice">年报文档名称(英文)</label> <input type="text" id="a_name_en" name="a_name_en" value="{$report.a_url_en}"/></p>
+
+                        <hr />
+
+                        <!-- 中期 -->
+                        <p><label for="notice">中期封面图片-中文</label> <input type="file" id="i_img_zh_ftp" name="i_img_zh_ftp" /></p>
+                        <p><label for="notice">中期封面图片-英文</label> <input type="file" id="i_img_en_ftp" name="i_img_en_ftp" /></p>
+
+                        <p><label for="notice">中期报告文档名称(中文)</label> <input type="text" id="i_name" name="i_name" value="{$report.i_url}"/></p>
+                        <p><label for="notice">中期报告文档名称(英文)</label> <input type="text" id="i_name_en" name="i_name_en" value="{$report.i_url_en}"/></p>
+                    </div>
+
+                    <!-- 直接上传 -->
+                     <div class='updirectly' style="display:none;">
+                      
+                        <p><label for="notice">年报封面图片 - 中文</label> <input type="file" id="a_img_zh" name="a_img_zh" /></p>
+                        <p><label for="notice">年报封面图片 - 英文</label> <input type="file" id="a_img_en" name="a_img_en" /></p>
+
+                        <p><label for="notice">年报文档(中文)</label> <input type="file" id="a_url" name="a_url" /></p>
+                        <p><label for="notice">年报文档(英文)</label> <input type="file" id="a_url_en" name="a_url_en" /></p>
+                        <hr/>
+                        <p><label for="notice">中期封面图片 - 中文</label> <input type="file" id="i_img" name="i_img_zh" /></p>
+                        <p><label for="notice">中期封面图片 - 英文</label> <input type="file" id="i_img" name="i_img_en" /></p>
+                        <p><label for="notice">中期报告文档(中文)</label> <input type="file" id="i_url" name="i_url" /></p>
+                        <p><label for="notice">中期报告文档(英文)</label> <input type="file" id="i_url_en" name="i_url_en" /></p>
+                     </div>
+     <!-- 表单E -->
+    <p>
+      <input type="submit" value="提交" id="submit" />
+    </p>
+  </form>
+</div>
+
+</body>
+</html>

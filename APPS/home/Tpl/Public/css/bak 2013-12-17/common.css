@@ -1,0 +1,290 @@
+@charset "UTF-8";
+
+/*公共样式*/
+*{padding: 0px;margin: 0px; font-size: 12px;font-family:"微软雅黑","Arial Narrow";color: #525252;}
+body{background:url(../images/index_bg.jpg) repeat-x center top;}
+a{ text-decoration: none;color: #525252;}
+
+img{border:none;}
+ul,ol{list-style: none;}
+table{border-collapse: collapse;}
+hr{margin:10px 5px;height:1px;color:#ccc;_margin:5px 0;width:98%;}
+input{border: 1px solid #ccc;border-radius: 4px;height: 24px;line-height: 24px;}
+
+.blank{clear: both;}
+
+.blank1{height:1px;clear:both;display:block;overflow: hidden;}
+.blank4{height:4px;clear:both;display:block;overflow: hidden;}
+.blank12{height:12px;clear:both;display:block;overflow: hidden;}
+
+
+/*首页*/
+#main{width:1000px;margin:0 auto;}
+/*head 部份*/
+.headbox{height:85px;}
+.logo{padding-top:15px;float:left;}
+.hkcode{float:left;padding:43px 0 0 20px;width:200px;}
+.hkcode a{height:22px;line-height:22px;font-size:13px;color:#fff;}
+.logoRight{height:24px;line-height:24px;overflow:hidden;float:right;padding-top:45px;}
+
+/*.logoRight li{line-height:18px;display:inline-block;color:#fff;*display:inline;}*/
+.logoRight li{line-height:18px;float:left;color:#fff;padding-right:3px;}
+
+.logoRight li a{color:#fff;font-size:14px;letter-spacing:normal;}
+
+/*导航条*/
+#navs{width:1000px;background: url(../images/zhucaidan-bg.jpg) repeat-x top left;height:35px;line-height: 35px;overflow: hidden;}
+#navs ul{margin:0 auto;width:920px;height:35px;line-height: 35px;text-align: center}
+#navs ul li{float:left;}
+#navs li a{color:#9D0F0E;font-size:14px;font-weight: bold;}
+#navs li a:hover{color:#ff3a3a;}
+/*导航英文样式*/
+#navs ul.navs_en li{padding:0 22px;}
+/*导航中文样式*/
+#navs ul.navs_tw li{padding:0 45px;}
+/*
+#navs ul li{float:left;width:150px;}
+#navs li a{color:#9D0F0E;font-size:14px;font-weight: bold;}
+#navs li a:hover{color:#ff3a3a;}
+*/
+/*ad图片*/
+.adimg{width:1000px;height:290px;background-color: #ddd;overflow: hidden;}
+
+/*视频广告部分*/
+.advideoimg{width:1000px;height:176px;overflow: hidden;}
+.video1,.adimg1,.adimg2{width:332px;height:176px;background-color: #333;float:left;}
+.video1{margin-right:2px;overflow: hidden;}
+/*視頻盒子*/
+/*#mediaplayer{width:260px;height:220px;margin:0 auto;}*/
+
+.adimg1{margin-right:2px;}
+
+/*主要内容*/
+.contentbox{width:1000px;}
+/*左侧*/
+.contentboxLeft{float:left;width:332px;margin-right:2px;}
+.leftBox1{height:85px;background-color: #ce1210;}
+.leftBox1 div.nowprice{padding:20px 0 0 30px;}
+.leftBox1 div.nowprice em{font-size:46px;font-weight:bold;color:#490f0e;font-style: normal;}
+.leftBox1 div.nowprice span{font-size: 12px;color:#490f0e;font-weight: normal;}
+.leftBox1 div.leftbox1r{float:right;display: inline-block;padding:30px 30px 0 0;width:80px;}
+.leftBox1 div.leftbox1r p{text-align:right;}
+.leftBox2{height:55px;background-color: #ffc0a1;overflow: hidden;}
+.leftBox2 ul{width:290px;padding: 5px 0 0 30px;}
+.leftBox2 li{float:left;line-height:24px;height:24px;width:140px;margin-right:5px;color:#482824;}
+.leftBox3{height:34px;background-color: #ffc0a1;overflow: hidden;}
+.leftBox3 p{padding:6px 0 0 30px;line-height: 22px;color:#735b4f;}
+.leftBox4{height:45px;background-color: #ce1210;overflow: hidden;}
+.leftBox4 h2{font-size:18px;text-align: center;color:#fff;margin-top: 9px;}
+.leftBox4 h2 a{font-size:18px;color:#fff;}
+
+.leftBox5{height:218px;background-color: #ffd0b2;overflow: hidden;text-align: center;}
+.leftBox5 .nianbao {padding:20px 0 0 20px;}
+.leftBox5 .nianbao li{float:left;width:135px;}
+.leftBox5 .nianbao li p{line-height: 30px;}
+/*右侧*/
+.contentboxRight{float:left;width:666px;}
+.rightBox1,.rightBox3{height:29px;background-color: #e2d9da;padding-left: 40px;}
+.rightBox1 h1 a,.rightBox3 h1 a{float:left;font-size:16px;font-weight:normal;line-height:29px;display:inline-block;color:#b40000;}
+
+.rightBox3 h1 a{text-align: center;padding:0 15px;}
+.rightBox3 h1 a.a_on{background-color:#D4C2CA;}
+
+
+/**/
+.rightBox2{height:229px;overflow: hidden;}
+.rightBox2 .medias1{height:150px;}
+.rightBox2 .medias1 img {float:right;margin-top: 10px;}
+.rightBox2 .medias1 .medias_one{float:left;width:360px;padding:15px 40px 0 40px;}
+.rightBox2 .medias1 .medias_one h3{font-size: 15px;color:#393939;line-height: 20px;height:30px;}
+.rightBox2 .medias1 .medias_one p{padding-top:15px;line-height: 22px;text-align: justify;text-justify:inter-ideograph;color:#747474;}
+.hr1{clear:both;overflow:hidden;height:1px;background-color: #cecece;width:360px;margin-left:40px;}
+.rightBox2 .medias2{width:100%;display: inline-block;}
+.rightBox2 .medias2 ul,.rightBox4 ul{padding:5px 0 20px 40px;}
+.rightBox2 .medias2 ul li ,.rightBox4 ul li{height:22px;line-height: 22px;}
+.rightBox2 .medias2 ul li a,.rightBox4 ul li a{color:#5b5b5b;}
+.rightBox2 .medias2 ul span,.rightBox4 ul span{display: inline-block;float:right;color:#5b5b5b;}
+.rightBox4 {}
+/*.rightBox4 ul{padding:5px 0 20px 40px;width:586px;}
+.rightBox4 ul li {height:22px;line-height: 22px;}
+.rightBox4 ul li a{color:#5b5b5b;}
+.rightBox4 ul span{display: inline-block;float:right;color:#5b5b5b;}*/
+/*頁脚 & 網站地圖*/
+#footers .maptitle {width:100%;height:30px;background-color: #c7c4bf;}
+#footers .maptitle ul{width:1000px;margin: 0 auto;}
+#footers .maptitle li{float:left;font-size:14px;font-weight:bold;line-height:30px;width:166px;text-align:center;color:#C9000A;height:30px;}
+
+.mapcontent{width:1000px;height:45px;margin: 0 auto;text-align: center;}
+.mapcontent .maptxt{overflow: hidden;}
+.mapcontent .maptxt li{float:left;width:166px;}
+.mapcontent .maptxt a{color:#525252;}
+.maptxt dt{line-height: 28px;}
+.linebox{width:1000px;background-color: #c80002;height:5px;overflow: hidden;}
+
+.fbottom{text-align: left;}
+.fbottom p{text-indent:10px;line-height: 26px;}
+.fbottom p span{display:inline-block;float:right;padding-right:10px;}
+
+
+/************************內頁****************************/
+.innerImg{width:1000px;height:135px;position:relative;overflow: hidden;}
+.secNav{position: absolute;bottom: 0;left:80px;_bottom:-1px;}
+.secNav li{float:left;line-height:35px;}
+.secNav li.secOn{background: url(../images/sanjiao.png) no-repeat bottom center;}
+/*.secNav li.secOn a{display:inline-block;float:left;background:url(../images/sanjiao.png) no-repeat bottom center;}*/
+.secNav li a{color:#444;font-weight:bold;/*letter-spacing:0.005em;word-spacing:0.01em;*/font-size: 12px;font-family:"微软雅黑";margin:0 20px;height:29px;line-height: 29px;}
+.secNav li a:hover{color:#fff;}
+/*.sanji{position:absolute;left:0;top:29px;height:27px;z-index: 10;}
+.sanji a{margin:0 15px;}*/
+#thirNav{width:1000px;height:27px;background:url(../images/caidan3-2.jpg);}
+/*.thirNav a{}*/
+#thirNav ul{margin-left:80px;line-height: 27px;color:#fff;}
+#thirNav ul li{float:left;color:#fff;font-size: 12px;padding:0 10px;cursor: pointer;}
+#thirNav ul li.on{background: url(../images/ton.png) no-repeat bottom;}
+#thirNav ul li.on:hover{text-decoration: none;}
+#thirNav ul li:hover{text-decoration: underline;}
+
+
+/************************************************************************************/
+
+/*内页主体内容*/
+.innerContent{width:1000px;overflow: hidden;}
+.innerLeft{float:left;width:739px;_width:734px;min-height:728px;/*border:1px solid #CACACA;*/background-color:#f6f5f5;}
+.innerLeft .contents{padding:30px 55px;}
+.innerLeft .contents p{line-height:150%;text-align: justify;text-justify:inter-ideograph;text-indent: 2em;color:#555;font-size:12px;margin-bottom: 1em;}
+/*内页左侧填满*/
+.innerLeft .fullLeft{padding:0;}
+.innerLeft .fullLeft #thirContent #thirContentBox{padding:30px 50px;}
+.innerLeft .fullLeft #thirContent #thirContentBox a:first-child{text-indent:-9999px;background:url(../images/back.png) no-repeat left top;display:inline-block;float:right;width:29px;height:29px;margin:10px 0px 10px 0;}
+#thirContentBox a{line-height: 32px;}
+/*#thirContentBox img {margin:10px 0;}*/
+.innerLeft .fullLeft #thirWinBox{position:relative;}
+.innerLeft .fullLeft #thirWinBox div{position:absolute;}
+/*******************************************/
+/*isd 核心业务*/
+.innerLeft .fullLeft #thirWinBox div.wisd1{width:739px;height:228px;left:0;top:0;}
+.innerLeft .fullLeft #thirWinBox div.wisd2{width:480px;height:228px;left:259px;top:229px;}
+.innerLeft .fullLeft #thirWinBox div.wisd3{width:258px;height:228px;left:0px;top:229px;}
+.innerLeft .fullLeft #thirWinBox div.wisd4{width:374px;height:271px;left:0;top:458px;}
+.innerLeft .fullLeft #thirWinBox div.wisd5{width:364px;height:271px;left:375px;top:458px;}
+/*isd 界面展示*/
+.innerLeft .fullLeft #thirContent #thirContentBox p.heading{}
+.innerLeft .fullLeft #thirContent #thirContentBox p.heading span{}
+/*iss-ivas 核心業務*/
+.innerLeft .fullLeft #thirWinBox div.wivas1{width:739px;height:228px;left:0;top:0;}
+.innerLeft .fullLeft #thirWinBox div.wivas2{width:258px;height:228px;left:0;top:229px;}
+.innerLeft .fullLeft #thirWinBox div.wivas3{width:480px;height:228px;left:259px;top:229px;}
+.innerLeft .fullLeft #thirWinBox div.wivas4{width:374px;height:271px;left:0;top:458px;}
+.innerLeft .fullLeft #thirWinBox div.wivas5{width:364px;height:271px;left:375px;top:458px;}
+
+.innerLeft .fullLeft h2{font-size:18px;color:#b01800;font-family: "微软雅黑";}
+/*ivas系统特点*/
+#ivas-feature li{width:100%;height:75px;padding:10px 0;}
+#ivas-feature li img {float:left;width:68px;}
+#ivas-feature li .right{float:left;width:500px;padding-left: 2em;}
+#ivas-feature li .right h3{font-size:14px;color:#e85c07;}
+#ivas-feature li .right p{text-indent:0;line-height:30px;}
+
+
+/*iss - 智能安防設備*/
+.innerLeft .fullLeft #thirWinBox div.whw1{width:739px;height:228px;left:0;top:0;}
+.innerLeft .fullLeft #thirWinBox div.whw2{width:739px;height:228px;left:0;top:229px;}
+.innerLeft .fullLeft #thirWinBox div.whw3{width:739px;height:271px;left:0px;top:458px;}
+
+/*******************************************/
+.leftArc {padding:30px 55px;}
+.leftArc li{line-height: 30px;height:30px;font-size: 12px;}
+.leftArc li a{text-indent:30px;display:inline-block;}
+.leftArc li span{width:110px;display: inline-block;}
+/*傳媒中心 企業宣傳*/
+ul.mediaul{padding:20px 0 0 0;}
+ul.mediaul li{line-height: 26px;font-size:13px;padding-bottom: 8px;margin-bottom:10px;border-bottom: 1px dashed #ccc;}
+ul.mediaul li a{vertical-align:center;text-align:center;display:inline-block;float:right;width:48px;height:24px;line-height:24px;border:1px solid #cdcdcd;border-radius: 5px;box-shadow: 1px 1px 2px 2px #eee;}
+ul.mediaul li a:hover{background-color:#ddd;color:#fff;}
+
+.innerRight{float:right;display:inline-block;width:249px;height:752px;}
+.rightbox{background-color:#ce1210;width:249px;height:228px;margin-bottom: 1px;}
+.rightbox a{color:#fff;}
+.rightbox1{background-color:#dcd7d7;}
+.rightbox1 a{color:#525252;}
+.rightbox1 p{line-height:28px;}
+.rightbox h4{line-height: 30px;height:30px;font-size:14px;/*color:#AB5019;*/color:#580d06;text-indent: 15px;}
+
+.rightbox ul#annCirs li,.rightbox ul#innerPress li{line-height: 24px;text-indent:15px;width:240px;overflow: hidden;}
+.rightbox ul#IAReport li{float:left;width:100px;padding:0 10px;text-align: center;}
+.rightbox2{width:249px;height:271px;}
+/**/
+/*集团概览*/
+/*公司历程*/
+#roadmap tr td{vertical-align: top;padding:8px 0;text-align: justify;text-justify:inter-ideograph;line-height: 150%;}
+/*企业管理*/
+.contents .management span.heading{display:block;color:#C4261D;line-height: 20px;font-weight: bold;}
+.contents .management span.heading a{color:#666;font-size: 15px;font-weight: bold;line-height: 20px;}
+.contents .management span.heading a:hover{color:#222;}
+.contents .management p{line-height: 18px;}
+.contents .management p a{font-family: "Arial Narrow";color:#555;font-weight: bold;}
+.contents .management p a:hover{color:#222;}
+/*主席报告书*/
+.contents .statement h2{font-size:18px;color:#ec3b3b;line-height: 30px;}
+.contents .statement h3{color:#e85c07;font-weight: normal;font-size: 12px;line-height: 24px;}
+/*公告等内容*/
+.annsBoxTitle{height:40px;}
+.annsBoxTitle p{line-height: 33px;height:33px;display:inline-block;float:right;padding:0;}
+.annsBoxTitle p select{width:65px;line-height: 30px;}
+.annBox h4{font-size:14px;color:#C4261D;line-height: 30px;}
+.annBox table tr td{line-height:45px;vertical-align:top;}
+/*投資者關係*/
+.contents .subtitle{color:red;font-size:13px;line-height:24px;}
+.contents .subtable{}
+.contents .subtable td{width:80px;height:28px;line-height:28px;vertical-align: top;text-align: left;}
+.contents .subtable td span{color:#bbb;padding-left: 3px;}
+.contents .subtable td.subbold{font-weight: bold;width:120px;text-align: right;padding-right: 2em;}
+.contents p.subp{text-indent: 0;text-align: left;line-height: 16px;}
+/*投资者英文*/
+.contents .subtable-e tr{border-bottom: 1px solid #ddd;}
+.contents .subtable-e td{padding-top: 8px;}
+.contents .subtable-e td.esubbold{font-weight: bold;vertical-align: top;font-size: 12px;line-height: 20px;text-align: right;}
+.contents .subtable-e td.esubp p{line-height: 18px;}
+/*中期报告/年报*/
+.cpage{display: inline-block;height:30px;line-height: 30px;float:right;margin-right:30px;}
+.cpage strong{margin-right: 5px;}
+.reports_table{padding:15px;}
+.reports_table tr td{vertical-align: top;width:200px;height:210px;text-align: center;}
+
+.reports_table  tr td a{text-align: center;display: inline-block;}
+.reports_table  tr td a p{}
+
+
+
+
+
+
+/*管理層*/
+.contents li.linkdot{line-height: 20px;list-style-type:disc;}
+.contents li.linkdot a{color:#666;}
+.contents p.heading{color:#b01800;font-size: 25px;font-family:"微软雅黑";font-weight:bold;}
+.contents p.headtwo{font-size:12px;font-weight: bold;color:#e85c07;}
+.contents p.headtwo B {font-size: 18px;color:#444;}
+.contents p.headtwo B span{color:#555;font-size: 12px;font-weight: normal;}
+
+/*榮譽*/
+.contents .atselect{height:35px;line-height:35px;text-align: right;}
+.contents .awardshowbox{padding:15px 0 0 0px;}
+.awardshowbox li{position:relative;float:left;width:200px;height:150px;padding:0 0 30px 0;text-align: center;border: 1px solid #fff;}
+.awardshowbox li p{width:200px;text-indent: 0;line-height: 24px;}
+.awardshowbox li img{cursor: pointer;}
+/*.contents .awardshowbox ul li{float:left;text-align: center;margin-right: 20px;}*/
+
+
+/*联系我们*/
+.innerContent .fullContent{border:1px solid #ccc;width:998px;min-height:350px;}
+.innerContent .fullContent .contents{padding:20px;}
+/*網站地圖*/
+#sitemap{width:850px;margin:0 auto;text-align: center;}
+#sitemap li{float:left;margin-right: 15px;}
+#sitemap li dt{border-bottom:2px solid #f20;line-height: 30px;font-weight: bold;}
+#sitemap li dd{line-height: 28px;width:120px;}
+
+.contents .contact li{margin-bottom: 20px;}
+.contents .contact li h3{font-size:14px;color:#C4261D;line-height: 28px;}
+.contents .contact li p{text-indent: 0;}

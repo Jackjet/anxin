@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{$header_title}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--<script language="javascript" type="text/javascript" src="/axChina__PUBLIC__/js/tablecloth.js"></script>-->
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-ui.js"></script>
+<script type="text/javascript">
+    var app = "__APP__";
+    var public = '__ROOT__/Public';
+</script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/js/sharecapital.js"></script>
+<link rel="stylesheet" type="text/css" media="all" href="__PUBLIC__/css/notice.css" />
+<link rel="stylesheet" type="text/css" media="all" href="__PUBLIC__/css/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" media="all" href="__PUBLIC__/css/tablecloth.css" />
+
+</head>
+
+<body>
+    <div id="container">
+    	<div id="col_left">
+        	<load file="__PUBLIC__/leftnav.html"/>
+        </div>
+    	<div id="col_right">
+            <div class="ajax_result"></div>
+            <div id="li_notice">
+                <table cellspacing="0" cellpadding="0" id="tb_notice">
+                    <tr>
+                        <th class="sequence">ID</th>
+                        <th class="td_title">中文标题</th>
+                        <th class="td_title">英文标题</th>
+                        <th colspan="2">操作</th>
+                    </tr>
+                    <foreach from="$list" value="$vo">
+                    <tr>
+                        <td class="sequence">{$vo.id}</td>
+                        <td class="td_title"><a href="__ROOT__/Public/announcements/zh/{$vo.file_url}" target="_blank">{$vo.title}</a></td>
+                        <td class="td_title"><a href="__ROOT__/Public/announcements/en/{$vo.file_url_en}" target="_blank">{$vo.title_en}</a></td>
+                        <td class="del"><span><a href="javascript:ajax_del_sharecapital('{$vo.id}')">删除</a></span></td>
+                        <td class="edit"><span><a href="__CONTROL__/toUpdate?id={$vo.id}">修改</a></span></td>
+                    </tr>
+                    </foreach>																					
+                </table>
+            </div>
+            <div class="blank"></div>            
+            <div id="page_nav" class="green-black">{$page}</div>
+            <div class="blank"></div>            
+            <div id="form_notice">
+                <form action="__URL__/upload" method="POST" enctype="multipart/form-data" class="u_form">
+                <p><label for="creat_time">创建时间</label> <input type="text" id="create_time" name="create_time" value="{|date('Y-m-d')}"/></p>
+                    <p><label for="title">中文标题</label> <input type="text" id="title" name="title" value="{$title}"/></p>
+                    <p><label for="title_en">英文标题</label> <input type="text" id="title_en" name="title_en" value="{$title_en}"/></p>
+                    <p><label for="notice">中文文件上传</label> <input type="file" id="sharecapital" name="sharecapital" /></p>
+                    <p><label for="notice">英文文件上传</label> <input type="file" id="sharecapital_en" name="sharecapital_en" /></p>
+                    <p class="submit"><input type="submit" value="添加股本申报表" /></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
